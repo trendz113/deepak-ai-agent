@@ -3,6 +3,7 @@ main.py — Flask server for Deepak AI Agent
 Starts the agent loop in a background thread on startup.
 """
 
+import os
 import threading
 from flask import Flask, jsonify, request
 import agent
