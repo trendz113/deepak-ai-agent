@@ -37,6 +37,11 @@ def command():
 
     return jsonify({"response": response})
 
+@app.route("/tasks")
+def tasks():
+    from agent import get_tasks
+    return jsonify(get_tasks())
+
 # Start background thread safely
 threading.Thread(target=loop, daemon=True).start()
 
