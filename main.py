@@ -22,31 +22,28 @@ def loop():
 
         time.sleep(120)
 
-# 📱 Clean text output (browser)
+# 📱 Clean text output
 @app.route("/")
 def home():
     return Response(latest, mimetype='text/plain')
 
-# 📱 Command API (optional)
+# 📱 Command API
 @app.route("/command", methods=["POST"])
 def command():
     data = request.json
     user_input = data.get("text", "")
-
     response = think(user_input)
-
     return jsonify({"response": response})
 
+# 📋 Task API (FIXED)
 @app.route("/tasks")
-def tasks():
-    @app.route("/tasks")
 def tasks():
     return jsonify(get_tasks())
 
-# Start background thread safely
+# Start background thread
 threading.Thread(target=loop, daemon=True).start()
 
-# Run server (Railway compatible)
+# Run server
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
