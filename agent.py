@@ -19,17 +19,14 @@ def save(data):
 def run_agent():
     prompt = """
     1. Plan next useful task
-    2. Suggest business idea
+    2. Suggest one online business idea
     3. Break into steps
-    4. Suggest action to execute NOW
+    4. Give one action to execute now
 
-    Also include:
-    ACTION: <what to do>
+    Format clearly.
     """
 
     result = think(prompt)
     save(result)
-
-    print("AI:", result)
 
     return result
