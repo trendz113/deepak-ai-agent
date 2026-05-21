@@ -1,0 +1,4 @@
+flask
+schedule
+google-generativeai
+sqlite3
