@@ -21,7 +21,11 @@ def loop():
 
 @app.route("/")
 def home():
-    return jsonify({"AI": latest})
+    from flask import Response
+
+@app.route("/")
+def home():
+    return Response(latest, mimetype='text/plain')
 
 # Run loop safely in background
 threading.Thread(target=loop, daemon=True).start()
