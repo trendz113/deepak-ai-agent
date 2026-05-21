@@ -1,12 +1,15 @@
-from flask import Flask, jsonify
+from flask import Flask, Response, request, jsonify
 import threading
 import time
+import os
 from agent import run_agent
+from brain import think
 
 app = Flask(__name__)
 
 latest = "Starting..."
 
+# 🔁 Background AI loop
 def loop():
     global latest
     while True:
@@ -19,18 +22,25 @@ def loop():
 
         time.sleep(120)
 
-@app.route("/")
-def home():
-    from flask import Response
-
+# 📱 Clean text output (browser)
 @app.route("/")
 def home():
     return Response(latest, mimetype='text/plain')
 
-# Run loop safely in background
+# 📱 Command API (optional)
+@app.route("/command", methods=["POST"])
+def command():
+    data = request.json
+    user_input = data.get("text", "")
+
+    response = think(user_input)
+
+    return jsonify({"response": response})
+
+# Start background thread safely
 threading.Thread(target=loop, daemon=True).start()
 
+# Run server (Railway compatible)
 if __name__ == "__main__":
-    import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
