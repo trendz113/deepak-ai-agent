@@ -20,7 +20,7 @@ Be practical and action-oriented.
 def think(task):
     try:
         response = client.chat.completions.create(
-            model="llama3-8b-8192",  # ✅ working model
+            model="llama-3.1-8b-instant",  # ✅ working model
             messages=[
                 {"role": "system", "content": SYSTEM},
                 {"role": "user", "content": task}
