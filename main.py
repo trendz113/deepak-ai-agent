@@ -2,7 +2,7 @@ from flask import Flask, Response, request, jsonify
 import threading
 import time
 import os
-from agent import run_agent
+from agent import run_agent, get_tasks
 from brain import think
 
 app = Flask(__name__)
@@ -39,7 +39,8 @@ def command():
 
 @app.route("/tasks")
 def tasks():
-    from agent import get_tasks
+    @app.route("/tasks")
+def tasks():
     return jsonify(get_tasks())
 
 # Start background thread safely
