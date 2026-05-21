@@ -1,1 +1,3 @@
-GROQ_API_KEY = "YOUR_GROQ_API_KEY"
+import os
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
