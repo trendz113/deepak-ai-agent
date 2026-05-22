@@ -195,6 +195,12 @@ setInterval(load, 15000);
 </script>
 </body>
 </html>"""
+    
+    @app.route("/test-push")
+def test_push():
+    import agent
+    result = agent.push_to_github("test.md", "# Test\nPush working!", "test push")
+    return jsonify(result)
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
