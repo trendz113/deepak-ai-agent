@@ -17,12 +17,12 @@ from brain import think
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-DB_PATH       = os.getenv("DB_PATH", "tasks.db")
-GITHUB_TOKEN  = os.getenv("GITHUB_TOKEN", "")
-GITHUB_REPO   = os.getenv("GITHUB_REPO", "")   # e.g. "trendz113/deepak-ai-agent"
+DB_PATH      = os.getenv("DB_PATH", "tasks.db")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "")
+GITHUB_REPO  = os.getenv("GITHUB_REPO", "")   # e.g. "trendz113/deepak-ai-agent"
 
-WORKER_TYPES  = ["research", "builder", "marketing", "outreach"]
-MAX_PARALLEL  = 3
+WORKER_TYPES = ["research", "builder", "marketing", "outreach"]
+MAX_PARALLEL = 3
 
 # ── GitHub ────────────────────────────────────────────────────────────────────
 
@@ -39,7 +39,6 @@ def push_to_github(filename: str, content: str, commit_msg: str = None) -> dict:
         "User-Agent":    "deepak-ai-agent",
     }
 
-    # Check if file already exists (need sha for updates)
     sha = None
     try:
         req = urllib.request.Request(api_url, headers=headers)
@@ -215,8 +214,49 @@ def save_goal(goal: str):
 
 # ── Supervisor ────────────────────────────────────────────────────────────────
 
+# Fallback tasks used if the LLM doesn't return all 6
+FALLBACK_TASKS = {
+    "research":  [
+        "Research top 10 competitors in the chosen niche and their pricing strategies",
+        "Identify top 5 Indian supplier platforms (Indiamart, Meesho, GlowRoad) for the niche",
+    ],
+    "builder":   [
+        "Build a full HTML landing page with hero section, features, and waitlist form",
+        "Create a CSV product catalogue with 10 items including name, price, description, image URL",
+    ],
+    "marketing": [
+        "Write 5 social media posts (Instagram, Twitter, LinkedIn, WhatsApp, Facebook) for launch",
+    ],
+    "outreach":  [
+        "Find 10 potential Indian micro-influencers in the niche with email/DM contact details",
+    ],
+}
+
+def _parse_tasks_from_result(result: str, goal: str) -> list:
+    """
+    Parse worker tasks from the LLM response.
+    Returns list of (worker_type, task_text) tuples.
+    """
+    parsed = []
+    if "TASKS:" not in result:
+        return parsed
+
+    tasks_block = result.split("TASKS:")[1].strip()
+    for line in tasks_block.split("\n"):
+        line = line.strip()
+        if not line:
+            continue
+        for wtype in WORKER_TYPES:
+            if line.lower().startswith(wtype + ":"):
+                task_text = line[len(wtype) + 1:].strip()
+                if task_text:
+                    parsed.append((wtype, task_text))
+                break
+    return parsed
+
+
 def run_supervisor():
-    """Picks a daily goal once per day and creates 6 worker tasks."""
+    """Picks a daily goal once per day and creates exactly 6 worker tasks."""
     existing = get_todays_goal()
     if existing:
         print(f"📋 Today's goal already set: {existing['goal'][:80]}")
@@ -224,33 +264,27 @@ def run_supervisor():
 
     print("🧠 Supervisor picking today's goal...")
 
-    prompt = f"""You are a Supervisor AI for an autonomous business agent run by an Indian solo founder.
+    prompt = f"""You are a Supervisor AI for an autonomous business agent.
 Today is {datetime.now().strftime('%A, %d %B %Y')}.
 
-Pick ONE ambitious but realistic online business goal for today and break it into exactly 6 tasks.
+YOUR ONLY JOB: output exactly the block below — no intro, no explanation, no markdown, no extra lines.
 
-Available workers:
-- research:  finds opportunities, validates ideas, analyzes markets
-- builder:   builds HTML pages, writes code, creates files
-- marketing: writes copy, social media posts, email campaigns
-- outreach:  finds contacts, writes pitches, identifies customers
+Pick ONE online business goal for an Indian solo founder (dropshipping, SaaS, affiliate, local digitization, content, services).
 
-Rules:
-- Goal must be a real online business that could make money in India
-- Tasks must be concrete and actionable
-- Think: dropshipping, local business digitization, SaaS, content business, affiliate, service business
+You MUST output ALL 6 task lines — exactly 2 for research, 2 for builder, 1 for marketing, 1 for outreach.
+Each task line MUST start with the worker name followed by a colon.
+Do NOT skip any worker. Do NOT add commentary.
 
-Reply EXACTLY in this format (no extra text):
-
-GOAL: [one sentence describing today's business goal]
+GOAL: [one sentence — the business goal for today]
 TASKS:
-research: [specific research task 1]
-research: [specific research task 2]
-builder: [specific build task 1]
-builder: [specific build task 2]
-marketing: [specific marketing task]
-outreach: [specific outreach task]
-"""
+research: [research task 1 — market research, competitors, trends]
+research: [research task 2 — supplier research, pricing, platforms]
+builder: [builder task 1 — build a landing page or website]
+builder: [builder task 2 — create a product list, CSV, or tool]
+marketing: [marketing task — write social media posts and copy]
+outreach: [outreach task — find leads, influencers, or partners]
+
+OUTPUT THE 8 LINES ABOVE AND NOTHING ELSE."""
 
     try:
         result = think(prompt)
@@ -258,25 +292,42 @@ outreach: [specific outreach task]
         print(f"Supervisor error: {e}")
         return None
 
+    # Parse goal
     goal = ""
     if "GOAL:" in result:
         goal = result.split("GOAL:")[1].split("\n")[0].strip()
-        save_goal(goal)
-        print(f"🎯 Today's goal: {goal}")
 
-    if "TASKS:" in result:
-        tasks_block = result.split("TASKS:")[1].strip()
-        for line in tasks_block.split("\n"):
-            line = line.strip()
-            if not line:
-                continue
-            for wtype in WORKER_TYPES:
-                if line.lower().startswith(wtype + ":"):
-                    task_text = line[len(wtype) + 1:].strip()
-                    if task_text:
-                        add_task(task_text, worker=wtype, goal=goal)
-                        print(f"  ➕ [{wtype}] {task_text[:70]}")
-                    break
+    if not goal:
+        goal = f"Launch an online business targeting the Indian market — {datetime.now().strftime('%d %b %Y')}"
+
+    save_goal(goal)
+    print(f"🎯 Today's goal: {goal}")
+
+    # Parse tasks
+    parsed = _parse_tasks_from_result(result, goal)
+
+    # Count how many tasks per worker type we got
+    counts = {wtype: 0 for wtype in WORKER_TYPES}
+    for wtype, _ in parsed:
+        counts[wtype] += 1
+
+    # Add parsed tasks
+    for wtype, task_text in parsed:
+        added = add_task(task_text, worker=wtype, goal=goal)
+        if added:
+            print(f"  ➕ [{wtype}] {task_text[:70]}")
+
+    # Fill in missing tasks from fallback so we always have 6
+    required = {"research": 2, "builder": 2, "marketing": 1, "outreach": 1}
+    for wtype, needed in required.items():
+        shortfall = needed - counts.get(wtype, 0)
+        if shortfall > 0:
+            print(f"  ⚠  [{wtype}] only got {counts.get(wtype,0)}/{needed} — using fallback tasks")
+            for fallback_task in FALLBACK_TASKS[wtype][:shortfall]:
+                task_with_goal = f"{fallback_task} (for goal: {goal[:60]})"
+                added = add_task(task_with_goal, worker=wtype, goal=goal)
+                if added:
+                    print(f"  ➕ [{wtype}] FALLBACK: {task_with_goal[:70]}")
 
     # Push today's goal log to GitHub
     log_lines = [
@@ -328,43 +379,44 @@ def _build_worker_prompt(worker_type: str, task_id: int, task_text: str, goal: s
         return base + f"""Do thorough market research. Find real data, opportunities, competitors, pricing.
 Focus on the Indian market. Be specific with numbers, names, and sources.
 
-Reply EXACTLY (no extra text before OUTPUT_FILE):
+Reply EXACTLY in this format — no intro text, start directly with OUTPUT_FILE:
 
 OUTPUT_FILE: research/research_{task_id}.md
 CONTENT:
-[Your full research in markdown — headings, bullet points, real data]
+[Your full research in markdown — use headings, bullet points, real data, specific numbers]
 """
 
     if worker_type == "builder":
         return base + f"""Build a complete, production-ready deliverable.
 If it's a landing page: full HTML, dark design, mobile-responsive, Indian market copy, email waitlist form.
+If it's a CSV or data file: save as .csv with proper headers and 10+ rows of real data.
 If it's code: complete, working, well-commented.
 
-Reply EXACTLY (no extra text before OUTPUT_FILE):
+Reply EXACTLY in this format — no intro text, start directly with OUTPUT_FILE:
 
 OUTPUT_FILE: builds/output_{task_id}.html
 CONTENT:
-[Complete HTML starting with <!DOCTYPE html> OR complete code]
+[Complete deliverable — HTML starting with <!DOCTYPE html>, or CSV data, or complete code]
 """
 
     if worker_type == "marketing":
         return base + f"""Write complete, compelling marketing materials.
-Include: headline, tagline, social posts (Twitter/LinkedIn/Instagram), email subject lines, WhatsApp message.
-Target Indian audience. Use INR pricing. Be specific and punchy.
+Include: headline, tagline, 5 social media posts (Instagram, Twitter, LinkedIn, WhatsApp, Facebook), 3 email subject lines.
+Target Indian audience. Use INR pricing. Be punchy and specific.
 
-Reply EXACTLY (no extra text before OUTPUT_FILE):
+Reply EXACTLY in this format — no intro text, start directly with OUTPUT_FILE:
 
 OUTPUT_FILE: marketing/copy_{task_id}.md
 CONTENT:
-[All marketing copy in markdown]
+[All marketing copy in markdown with clear sections]
 """
 
     if worker_type == "outreach":
-        return base + f"""Find real potential customers, partners, or leads.
-Research actual businesses, their contact info, problems they have, and how to pitch them.
-Write ready-to-send outreach messages (email + WhatsApp).
+        return base + f"""Find real potential customers, partners, leads, or influencers.
+Include: name, platform/website, follower count or company size, contact method, and a ready-to-send pitch message.
+Write both an email version and a WhatsApp version of the outreach message.
 
-Reply EXACTLY (no extra text before OUTPUT_FILE):
+Reply EXACTLY in this format — no intro text, start directly with OUTPUT_FILE:
 
 OUTPUT_FILE: outreach/leads_{task_id}.md
 CONTENT:
@@ -441,7 +493,7 @@ def run_worker(worker_type: str):
         output = file_output or result[:2000]
         complete_task(task_id, output=output)
         print(f"  ✔  [{worker_type}] Done task {task_id}")
-        time.sleep(5)
+        time.sleep(20)   # space out API calls to avoid rate limits
 
 # ── Main entry ────────────────────────────────────────────────────────────────
 
@@ -453,12 +505,12 @@ def run_agent():
     time.sleep(2)
     run_supervisor()
 
-    # Start one worker thread per type
+    # Start one worker thread per type — staggered 20s apart to avoid rate limits
     for wtype in WORKER_TYPES:
         t = threading.Thread(target=run_worker, args=(wtype,), daemon=True)
         t.start()
         print(f"🔧 Worker started: {wtype}")
-        time.sleep(1)
+        time.sleep(20)
 
     # Re-run supervisor every 24 hours for next day's goal
     while True:
