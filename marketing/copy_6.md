@@ -1,81 +1,32 @@
-# Brand Identity
+## Brand Headline and Tagline
+**Headline:** Rangoli Handicrafts
+**Tagline:** "Weaving India's heritage into your home"
 
-## Headline
-**Harit Hai, Bharat Hai (Green is India)**
+## Instagram Post
+**Post:** Introducing Rangoli Handicrafts, your one-stop shop for exquisite Indian handicrafts!
+Explore our collection of handwoven textiles, intricately crafted wooden decor, and beautiful ceramics from across India. From the comfort of your own home, take a piece of India's rich culture with you.
+**Hashtags:** #IndianHandicrafts #Handicrafts #InspirationalHomeDecor #RangoliHandicrafts #Ecommerce #Dropshipping #ShopNow
+**Image:** A beautifully styled flat lay of Indian handicrafts on a wooden table, with a hint of Indian architecture in the background.
 
-## Tagline
-**Empowering a Sustainable Tomorrow**
+## Twitter/X Post
+Launch alert! Discover the authentic beauty of Indian handicrafts at Rangoli Handicrafts. Shop from the comfort of your home and take a piece of India's rich heritage with you!
 
-# Social Media Posts
+## LinkedIn Post
+**Post:** As a business owner, have you ever wanted to bring a touch of cultural authenticity to your home decor? Look no further than Rangoli Handicrafts, your one-stop shop for exquisite Indian handicrafts. From handwoven textiles to intricately crafted wooden decor, our collection showcases the best of Indian craftsmanship.
+At Rangoli Handicrafts, we're passionate about preserving India's rich cultural heritage and bringing it to your doorstep. Explore our collection today and discover the beauty of India's handicrafts!
 
-### Instagram Post 1
-**Go Green, Stay Cool!**
-Introducing our new line of eco-friendly products made from recycled materials!
-Stay refreshed with our reusable water bottles and reduce plastic waste.
-Pricing starts at ₹299. 
-Use code GREEN15 at checkout to get 15% off your first order!
-#EcoFriendly #Sustainability #GreenIndia
+## WhatsApp Message
+Hey! Check out Rangoli Handicrafts - your new go-to for authentic Indian handicrafts! Handwoven textiles, wooden decor, and more, all delivered to your doorstep. What are you waiting for?
 
-### Instagram Post 2
-**Join the Movement!**
-Did you know that every small step towards sustainability can make a BIG difference?
-At [Brand Name], we're committed to making eco-friendly products accessible to all.
-Explore our collection now and join the movement towards a greener tomorrow!
-#Sustainability #EcoFriendly #GreenLiving
+## Facebook Post
+**Post:** We're thrilled to announce the launch of Rangoli Handicrafts, your ultimate destination for Indian handicrafts! Our collection is a reflection of India's rich cultural heritage, with a focus on handwoven textiles, intricate wooden decor, and beautiful ceramics.
+At Rangoli Handicrafts, we're committed to preserving India's traditional craftsmanship and bringing it to your home. Explore our collection today and take a piece of India's heritage with you!
 
-### Twitter Post
-**Switch to eco-friendly products & reduce your carbon footprint!**
-Explore our collection of sustainable products, made from recycled materials, and priced from ₹299.
-Use code GREEN15 at checkout to get 15% off your first order!
-#EcoFriendly #Sustainability #GreenIndia
+## Email Subject Lines
+1. Introducing Rangoli Handicrafts: Your Home for Indian Handicrafts
+2. Discover India's Rich Cultural Heritage with Rangoli Handicrafts
+3. Exclusive Launch Offer: Get 15% Off Your First Purchase at Rangoli Handicrafts
 
-### LinkedIn Post
-**Embracing Sustainability in Business**
-At [Brand Name], we believe that sustainability is not just a trend, but a necessity.
-Our eco-friendly products are designed to reduce waste and promote a greener lifestyle.
-Explore our collection now and join us in our mission to make sustainability mainstream!
-#Sustainability #EcoFriendly #GreenBusiness
-
-### WhatsApp Post
-**Get ready to go green!**
-Introducing our new line of eco-friendly products, made from recycled materials.
-Pricing starts at ₹299. Use code GREEN15 at checkout to get 15% off your first order!
-#EcoFriendly #Sustainability #GreenIndia
-
-### Facebook Post 1
-**Join the Movement!**
-At [Brand Name], we're committed to making eco-friendly products accessible to all.
-Explore our collection now and join the movement towards a greener tomorrow!
-#Sustainability #EcoFriendly #GreenLiving
-
-### Facebook Post 2
-**Did you know?**
-Our eco-friendly products are made from recycled materials, reducing waste and promoting sustainability.
-Pricing starts at ₹299. Use code GREEN15 at checkout to get 15% off your first order!
-#EcoFriendly #Sustainability #GreenIndia
-
-# Email Copy
-
-### Email Subject Line 1
-**Get 15% Off Your First Order!**
-
-### Email Subject Line 2
-**Join the Eco-Friendly Movement!**
-
-### Email Subject Line 3
-**Unlock Sustainable Shopping with [Brand Name]!**
-
-### Email Body
-Dear [Name],
-
-At [Brand Name], we're committed to making eco-friendly products accessible to all. Our new line of sustainable products is made from recycled materials, reducing waste and promoting a greener lifestyle.
-
-Explore our collection now and join the movement towards a greener tomorrow! Use code GREEN15 at checkout to get 15% off your first order!
-
-Best regards,
-[Brand Name]
-
-### Email Call-to-Action
-Shop Now: [Link to Store]
-Learn More: [Link to About Page]
-Contact Us: [Link to Contact Page]
+## Google Ad Headline + Description
+**Headline:** Authentic Indian Handicrafts
+**Description:** Explore Rangoli Handicrafts' collection of handwoven textiles, intricately crafted wooden decor, and beautiful ceramics from across India. Shop now and take a piece of India's rich cultural heritage home!
