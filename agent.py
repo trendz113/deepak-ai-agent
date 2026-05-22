@@ -214,33 +214,28 @@ def save_goal(goal: str):
 
 # ── Supervisor ────────────────────────────────────────────────────────────────
 
-# Fallback tasks used if the LLM doesn't return all 6
 FALLBACK_TASKS = {
     "research":  [
-        "Research top 10 competitors in the chosen niche and their pricing strategies",
+        "Research top 10 competitors in the chosen niche and their pricing strategies in India",
         "Identify top 5 Indian supplier platforms (Indiamart, Meesho, GlowRoad) for the niche",
     ],
     "builder":   [
-        "Build a full HTML landing page with hero section, features, and waitlist form",
-        "Create a CSV product catalogue with 10 items including name, price, description, image URL",
+        "Build a full self-contained HTML landing page with hero section, features, and waitlist form",
+        "Create a CSV product catalogue with 10 items including name, price INR, description, category",
     ],
     "marketing": [
         "Write 5 social media posts (Instagram, Twitter, LinkedIn, WhatsApp, Facebook) for launch",
     ],
     "outreach":  [
-        "Find 10 potential Indian micro-influencers in the niche with email/DM contact details",
+        "Find 10 potential Indian micro-influencers in the niche with contact details and pitch messages",
     ],
 }
 
+
 def _parse_tasks_from_result(result: str, goal: str) -> list:
-    """
-    Parse worker tasks from the LLM response.
-    Returns list of (worker_type, task_text) tuples.
-    """
     parsed = []
     if "TASKS:" not in result:
         return parsed
-
     tasks_block = result.split("TASKS:")[1].strip()
     for line in tasks_block.split("\n"):
         line = line.strip()
@@ -292,7 +287,6 @@ OUTPUT THE 8 LINES ABOVE AND NOTHING ELSE."""
         print(f"Supervisor error: {e}")
         return None
 
-    # Parse goal
     goal = ""
     if "GOAL:" in result:
         goal = result.split("GOAL:")[1].split("\n")[0].strip()
@@ -303,33 +297,28 @@ OUTPUT THE 8 LINES ABOVE AND NOTHING ELSE."""
     save_goal(goal)
     print(f"🎯 Today's goal: {goal}")
 
-    # Parse tasks
     parsed = _parse_tasks_from_result(result, goal)
 
-    # Count how many tasks per worker type we got
     counts = {wtype: 0 for wtype in WORKER_TYPES}
     for wtype, _ in parsed:
         counts[wtype] += 1
 
-    # Add parsed tasks
     for wtype, task_text in parsed:
         added = add_task(task_text, worker=wtype, goal=goal)
         if added:
             print(f"  ➕ [{wtype}] {task_text[:70]}")
 
-    # Fill in missing tasks from fallback so we always have 6
     required = {"research": 2, "builder": 2, "marketing": 1, "outreach": 1}
     for wtype, needed in required.items():
         shortfall = needed - counts.get(wtype, 0)
         if shortfall > 0:
-            print(f"  ⚠  [{wtype}] only got {counts.get(wtype,0)}/{needed} — using fallback tasks")
+            print(f"  ⚠  [{wtype}] only got {counts.get(wtype,0)}/{needed} — using fallback")
             for fallback_task in FALLBACK_TASKS[wtype][:shortfall]:
-                task_with_goal = f"{fallback_task} (for goal: {goal[:60]})"
+                task_with_goal = f"{fallback_task} (for: {goal[:60]})"
                 added = add_task(task_with_goal, worker=wtype, goal=goal)
                 if added:
                     print(f"  ➕ [{wtype}] FALLBACK: {task_with_goal[:70]}")
 
-    # Push today's goal log to GitHub
     log_lines = [
         f"# Daily Goal — {datetime.now().strftime('%d %B %Y')}",
         "",
@@ -388,39 +377,62 @@ CONTENT:
 
     if worker_type == "builder":
         return base + f"""Build a complete, production-ready deliverable.
-If it's a landing page: full HTML, dark design, mobile-responsive, Indian market copy, email waitlist form.
-If it's a CSV or data file: save as .csv with proper headers and 10+ rows of real data.
-If it's code: complete, working, well-commented.
+
+CRITICAL RULES — you MUST follow all of these:
+- Everything in ONE single self-contained file — no external CSS, no styles.css, no separate files
+- ALL CSS must be inside a <style> tag within the <head> section
+- ALL JavaScript must be inside a <script> tag at the bottom of <body>
+- NO external image files — use CSS background gradients or emoji instead of <img src="file.jpg">
+- You MAY use Google Fonts via <link> tag and CDN libraries (Bootstrap, FontAwesome) via CDN links
+- Dark theme design (#0f0f0f background), mobile responsive, looks modern and professional
+- Indian market copy, prices in INR (₹), include an email waitlist/signup form
+- If the task is a CSV: output raw CSV data with headers and 10+ real product rows
 
 Reply EXACTLY in this format — no intro text, start directly with OUTPUT_FILE:
 
 OUTPUT_FILE: builds/output_{task_id}.html
 CONTENT:
-[Complete deliverable — HTML starting with <!DOCTYPE html>, or CSV data, or complete code]
+[Complete self-contained HTML file starting with <!DOCTYPE html> — opens perfectly in any browser with no missing files]
 """
 
     if worker_type == "marketing":
         return base + f"""Write complete, compelling marketing materials.
-Include: headline, tagline, 5 social media posts (Instagram, Twitter, LinkedIn, WhatsApp, Facebook), 3 email subject lines.
+Include ALL of these sections:
+1. Brand headline and tagline
+2. Instagram post (with hashtags)
+3. Twitter/X post (under 280 chars)
+4. LinkedIn post (professional tone)
+5. WhatsApp message (casual, conversational)
+6. Facebook post
+7. 3 email subject lines
+8. Google Ad headline + description
+
 Target Indian audience. Use INR pricing. Be punchy and specific.
 
 Reply EXACTLY in this format — no intro text, start directly with OUTPUT_FILE:
 
 OUTPUT_FILE: marketing/copy_{task_id}.md
 CONTENT:
-[All marketing copy in markdown with clear sections]
+[All marketing copy in markdown with clear ## section headers]
 """
 
     if worker_type == "outreach":
         return base + f"""Find real potential customers, partners, leads, or influencers.
-Include: name, platform/website, follower count or company size, contact method, and a ready-to-send pitch message.
-Write both an email version and a WhatsApp version of the outreach message.
+For each lead include:
+- Name / Handle
+- Platform (Instagram/LinkedIn/email)
+- Follower count or company size
+- Why they are a good fit
+- Ready-to-send Email pitch (subject + body)
+- Ready-to-send WhatsApp message
+
+Find at least 10 leads. Be specific — use real Indian influencer/business names where possible.
 
 Reply EXACTLY in this format — no intro text, start directly with OUTPUT_FILE:
 
 OUTPUT_FILE: outreach/leads_{task_id}.md
 CONTENT:
-[Lead list + outreach messages in markdown]
+[Lead list + outreach messages in markdown with clear sections per lead]
 """
 
     return base
@@ -429,7 +441,6 @@ CONTENT:
 def run_worker(worker_type: str):
     """Single worker loop — picks its own tasks and executes them."""
     while True:
-        # Respect parallel limit
         while get_running_count() >= MAX_PARALLEL:
             time.sleep(5)
 
@@ -467,13 +478,16 @@ def run_worker(worker_type: str):
 
         file_output = None
 
-        # Save file locally and push to GitHub
         if "OUTPUT_FILE:" in result and "CONTENT:" in result:
             try:
                 filename = result.split("OUTPUT_FILE:")[1].split("\n")[0].strip()
                 content  = result.split("CONTENT:")[1].strip()
 
-                _safe_write(filename, content)   # creates dirs automatically
+                # Strip any accidental trailing OUTPUT_FILE lines the LLM adds
+                if "\nOUTPUT_FILE:" in content:
+                    content = content.split("\nOUTPUT_FILE:")[0].strip()
+
+                _safe_write(filename, content)
                 file_output = content
 
                 push_result = push_to_github(
@@ -493,7 +507,8 @@ def run_worker(worker_type: str):
         output = file_output or result[:2000]
         complete_task(task_id, output=output)
         print(f"  ✔  [{worker_type}] Done task {task_id}")
-        time.sleep(20)   # space out API calls to avoid rate limits
+        time.sleep(20)
+
 
 # ── Main entry ────────────────────────────────────────────────────────────────
 
@@ -505,14 +520,12 @@ def run_agent():
     time.sleep(2)
     run_supervisor()
 
-    # Start one worker thread per type — staggered 20s apart to avoid rate limits
     for wtype in WORKER_TYPES:
         t = threading.Thread(target=run_worker, args=(wtype,), daemon=True)
         t.start()
         print(f"🔧 Worker started: {wtype}")
         time.sleep(20)
 
-    # Re-run supervisor every 24 hours for next day's goal
     while True:
         time.sleep(24 * 3600)
         run_supervisor()
