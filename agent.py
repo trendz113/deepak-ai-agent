@@ -1,4 +1,4 @@
-"""
+""" 
 agent.py — Supervisor + Worker Agent System
 Supervisor picks daily goals, breaks into tasks, assigns to specialist workers.
 Workers run 2-3 in parallel. Results pushed to GitHub + emailed.
