@@ -2,65 +2,134 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoBuddy - Eco-Friendly Products</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Handicrafts of India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-e6Iq-BSY2uB1fgpY3zYb3HiFi2EquTBYtmv+1guhKo/VH2gA8/wheo/+FrD48NLyDKrOl6B2y7mBEITp5Vinw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZJtcR5KHZw1JeInwf4bPHrcOaRIeYZTGgggt6gK2+LlS427q8W5r/js7KiVikO+BkB7a3F3y8xZek1Ww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f0f0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .hero {
+            background-color: #0f0f0f;
+            padding: 100px 20px;
+            color: #ffffff;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+        .features {
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .features .feature {
+            padding: 20px;
+            border-bottom: 1px solid #dddddd;
+        }
+        .features .feature .icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .features .feature h4 {
+            margin-top: 0;
+        }
+        .features .feature p {
+            margin-bottom: 20px;
+        }
+        .waitlist {
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .waitlist h2 {
+            margin-top: 0;
+        }
+        .waitlist form {
+            padding: 20px;
+        }
+        .waitlist form input[type="email"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .waitlist form button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        .waitlist form button[type="submit"]:hover {
+            background-color: #333333;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                height: 50vh;
+                padding: 20px;
+            }
+            .features .feature {
+                border-bottom: none;
+            }
+            .waitlist form {
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h1>Welcome to EcoBuddy</h1>
-            <p>Explore our collection of eco-friendly products, carefully curated for a sustainable lifestyle.</p>
-            <button>Shop Now</button>
-        </section>
-        <section id="about">
-            <h1>About Us</h1>
-            <p>We're passionate about creating a better world for future generations. Our products are designed to reduce waste and promote sustainability.</p>
-            <img src="eco-friendly.jpg" alt="Eco-friendly products">
-        </section>
-        <section id="products">
-            <h1>Our Products</h1>
-            <div class="products-grid">
-                <div class="product">
-                    <img src="product1.jpg" alt="Product 1">
-                    <h2>Product 1</h2>
-                    <p>Descriptive text for Product 1</p>
-                    <button>Buy Now</button>
-                </div>
-                <div class="product">
-                    <img src="product2.jpg" alt="Product 2">
-                    <h2>Product 2</h2>
-                    <p>Descriptive text for Product 2</p>
-                    <button>Buy Now</button>
-                </div>
-                <!-- Add more products here -->
+    <div class="container">
+        <div class="hero">
+            <h1>Welcome to Handicrafts of India</h1>
+            <p>Experience the beauty of Indian handicrafts from the comfort of your home</p>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <span class="icon fa-solid fa-box"></span>
+                <h4>Handpicked Products</h4>
+                <p>Our products are carefully selected from local artisans to ensure you get the best</p>
             </div>
-        </section>
-        <section id="contact">
-            <h1>Get in Touch</h1>
+            <div class="feature">
+                <span class="icon fa-solid fa-credit-card"></span>
+                <h4>Secure Payment</h4>
+                <p>We offer secure payment options to ensure your transactions are safe and hassle-free</p>
+            </div>
+            <div class="feature">
+                <span class="icon fa-solid fa-clock"></span>
+                <h4>Fast Shipping</h4>
+                <p>We ship our products quickly to ensure you receive them on time</p>
+            </div>
+        </div>
+        <div class="waitlist">
+            <h2>Join our waitlist to get notified when we launch</h2>
             <form>
-                <input type="email" placeholder="Enter your email">
-                <button>Join Waitlist</button>
+                <input type="email" placeholder="Enter your email address">
+                <button type="submit">Join Waitlist</button>
             </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 EcoBuddy. All rights reserved.</p>
-    </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-S+GDGF+UNJ YuF0cXh0xwEGPZcYp3UeeN3OBF9N/BfydHZHGvZ4Mstw+iqjkpy08EqLqsGOiGk2k9ZDB0I/fTg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Add JavaScript code here
+    </script>
 </body>
 </html>
-
-OUTPUT_FILE: styles.css
