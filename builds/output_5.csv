@@ -1,13 +1,11 @@
-name,price,description,image_url
-Saree for Women,499.99,A beautiful saree for women,https://example.com/images/saree.jpg
-Kurti for Women,299.99,A stylish kurti for women,https://example.com/images/kurti.jpg
-Men's Casual Shirts,399.99,A collection of casual shirts for men,https://example.com/images/mens-shirt.jpg
-Women's Lehenga Choli,799.99,A traditional lehenga choli for women,https://example.com/images/lehenga-choli.jpg
-Men's Formal Shoes,999.99,A pair of formal shoes for men,https://example.com/images/mens-shoes.jpg
-Indian Wear Suits,699.99,A stylish Indian wear suit for men,https://example.com/images/indian-suit.jpg
-Women's Salwar Kameez,599.99,A traditional salwar kameez for women,https://example.com/images/salwar-kameez.jpg
-Men's Accessories,299.99,A collection of men's accessories,https://example.com/images/mens-accessories.jpg
-Women's Jewellery,499.99,A collection of women's jewellery,https://example.com/images/womens-jewellery.jpg
-Festive Wear Dresses,999.99,A collection of festive wear dresses for women,https://example.com/images/festive-wear-dress.jpg
-
-OUTPUT_FILE: builds/product_catalogue.py
+"Product ID","Product Name","Description","Category","Price","Image URL"
+"ETH001","Lahori Suit","Traditional Pakistani suit with intricate embroidery and mirror work. Perfect for weddings and special occasions.","Suits","$250.00","https://example.com/ethnic-weart-images/ETH001.jpg"
+"ETH002","Bandhani Saree","Vibrant Indian saree featuring traditional bandhani print. Ideal for festivals and cultural events.","Sarees","$150.00","https://example.com/ethnic-weart-images/ETH002.jpg"
+"ETH003","Kurti and Leggings Set","Comfortable and stylish Indian kurti paired with matching leggings. Suitable for daily wear.","Kurtis","$75.00","https://example.com/ethnic-weart-images/ETH003.jpg"
+"ETH004","Mughal Print Lehenga","Elegant Indian lehenga featuring intricate Mughal print and intricate embroidery. Perfect for special occasions.","Lehengas","$300.00","https://example.com/ethnic-weart-images/ETH004.jpg"
+"ETH005","Handloom Cotton Dhoti","Traditional Indian dhoti made from handloom cotton. Perfect for casual wear.","Dhotis","$60.00","https://example.com/ethnic-weart-images/ETH005.jpg"
+"ETH006","Georgette Sari","Lightweight and elegant Indian saree made from georgette fabric. Suitable for daily wear.","Sarees","$100.00","https://example.com/ethnic-weart-images/ETH006.jpg"
+"ETH007","Embroidered Kameez","Stunning Indian kameez featuring intricate embroidery and mirror work. Perfect for weddings and special occasions.","Kurtas","$200.00","https://example.com/ethnic-weart-images/ETH007.jpg"
+"ETH008","Patola Print Saree","Traditional Indian saree featuring intricate patola print. Ideal for cultural events and festivals.","Sarees","$180.00","https://example.com/ethnic-weart-images/ETH008.jpg"
+"ETH009","Cotton Salwar Kameez","Comfortable and stylish Indian salwar kameez made from cotton fabric. Suitable for daily wear.","Salwar Kameez","$80.00","https://example.com/ethnic-weart-images/ETH009.jpg"
+"ETH010","Lehenga Choli Set","Stunning Indian lehenga choli set featuring intricate embroidery and mirror work. Perfect for special occasions.","Lehengas","$350.00","https://example.com/ethnic-weart-images/ETH010.jpg"
