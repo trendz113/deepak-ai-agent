@@ -4,55 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swadeshi E-Store</title>
+    <title>Local Digitization Services</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="hero">
+    <header class="dark-mode">
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <h1>Welcome to Swadeshi E-Store</h1>
-        <p>Buy Indian, Buy Proud!</p>
-        <button>Join Our Waitlist</button>
     </header>
     <main>
-        <section class="features">
-            <h2>What We Offer</h2>
+        <section id="home" class="dark-mode">
+            <h1>Welcome to Local Digitization Services</h1>
+            <p>Empowering Indian businesses with digital transformation</p>
+            <button class="email-btn">Join Our Waitlist</button>
+            <form id="waitlist-form">
+                <input type="email" id="email" placeholder="Enter your email address">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="services" class="dark-mode">
+            <h1>Our Services</h1>
+            <ul>
+                <li>Document Scanning and Digitization</li>
+                <li>Data Entry and Management</li>
+                <li>Digital Archiving and Storage</li>
+                <li>Electronic Signature and Authentication</li>
+            </ul>
+        </section>
+        <section id="case-studies" class="dark-mode">
+            <h1>Success Stories</h1>
             <ul>
                 <li>
-                    <h3>Authentic Products</h3>
-                    <p>We offer 100% authentic Indian products, sourced directly from artisans.</p>
+                    <h2>Case Study 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
                 </li>
                 <li>
-                    <h3>Competitive Pricing</h3>
-                    <p>We ensure that our products are priced competitively, without compromising on quality.</p>
+                    <h2>Case Study 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
                 </li>
                 <li>
-                    <h3>Secure Shopping</h3>
-                    <p>Your data is secure with us. We use SSL encryption for all transactions.</p>
+                    <h2>Case Study 3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
                 </li>
             </ul>
         </section>
-        <section class="waitlist">
-            <h2>Join Our Waitlist</h2>
-            <p>Be the first to know when we launch!</p>
+        <section id="contact" class="dark-mode">
+            <h1>Get in Touch</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
             <form>
-                <input type="email" placeholder="Enter your email address" required>
-                <button>Join Waitlist</button>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button>Send</button>
             </form>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2026 Swadeshi E-Store. All rights reserved.</p>
+    <footer class="dark-mode">
+        <p>&copy; 2026 Local Digitization Services</p>
     </footer>
     <script src="script.js"></script>
 </body>
 </html>
 ```
 
-OUTPUT_FILE: builds/styles.css
+OUTPUT_FILE: builds/waitlist_data.csv
