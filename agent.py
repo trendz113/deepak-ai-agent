@@ -1,24 +1,81 @@
 """
-agent.py — SQLite-backed task store + AI worker for Deepak AI Agent
+agent.py — Autonomous AI agent with GitHub push capability
 """
 
 import sqlite3
 import os
+import json
+import base64
+import urllib.request
+import urllib.error
+import time
 from brain import think
 
-# ── DB setup ─────────────────────────────────────────────────────────────────
+DB_PATH     = os.getenv("DB_PATH", "tasks.db")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "")
+GITHUB_REPO  = os.getenv("GITHUB_REPO", "")
 
-DB_PATH = os.getenv("DB_PATH", "tasks.db")
+
+# ── GitHub helper ─────────────────────────────────────────────────────────────
+
+def push_to_github(filename: str, content: str, commit_msg: str = None) -> dict:
+    """Push a file to the GitHub repo via API. Returns {ok, url, error}."""
+    if not GITHUB_TOKEN or not GITHUB_REPO:
+        return {"ok": False, "error": "GITHUB_TOKEN or GITHUB_REPO not set"}
+
+    api_url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{filename}"
+    headers = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Content-Type": "application/json",
+        "Accept": "application/vnd.github.v3+json",
+        "User-Agent": "deepak-ai-agent"
+    }
+
+    # Check if file exists (to get sha for update)
+    sha = None
+    try:
+        req = urllib.request.Request(api_url, headers=headers)
+        with urllib.request.urlopen(req) as resp:
+            existing = json.loads(resp.read())
+            sha = existing.get("sha")
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            return {"ok": False, "error": f"GitHub GET error: {e.code}"}
+
+    # Build payload
+    encoded = base64.b64encode(content.encode("utf-8")).decode("utf-8")
+    payload = {
+        "message": commit_msg or f"agent: add {filename}",
+        "content": encoded,
+    }
+    if sha:
+        payload["sha"] = sha
+
+    try:
+        data = json.dumps(payload).encode("utf-8")
+        req = urllib.request.Request(api_url, data=data, headers=headers, method="PUT")
+        with urllib.request.urlopen(req) as resp:
+            result = json.loads(resp.read())
+            html_url = result.get("content", {}).get("html_url", "")
+            raw_url  = f"https://raw.githubusercontent.com/{GITHUB_REPO}/main/{filename}"
+            pages_url = f"https://{GITHUB_REPO.split('/')[0]}.github.io/{GITHUB_REPO.split('/')[1]}/{filename}"
+            return {"ok": True, "url": html_url, "raw": raw_url, "pages": pages_url}
+    except urllib.error.HTTPError as e:
+        body = e.read().decode()
+        return {"ok": False, "error": f"GitHub PUT error {e.code}: {body[:200]}"}
+    except Exception as e:
+        return {"ok": False, "error": str(e)}
+
+
+# ── DB setup ──────────────────────────────────────────────────────────────────
 
 def _get_conn():
-    """Return a per-call connection (safe for multi-threaded Flask)."""
     conn = sqlite3.connect(DB_PATH, check_same_thread=False)
     conn.row_factory = sqlite3.Row
     return conn
 
 
 def init_db():
-    """Create tables if they don't exist. Called once by main.py on startup."""
     conn = _get_conn()
     conn.execute("""
         CREATE TABLE IF NOT EXISTS tasks (
@@ -33,13 +90,7 @@ def init_db():
     conn.close()
 
 
-# ── Task helpers ──────────────────────────────────────────────────────────────
-
 def add_task(task: str) -> bool:
-    """
-    Insert a task. Skips duplicates (same text + pending).
-    Returns True if inserted, False if it already existed.
-    """
     conn = _get_conn()
     existing = conn.execute(
         "SELECT id FROM tasks WHERE task = ? AND status = 'pending'", (task,)
@@ -47,16 +98,13 @@ def add_task(task: str) -> bool:
     if existing:
         conn.close()
         return False
-    conn.execute(
-        "INSERT INTO tasks (task, status) VALUES (?, 'pending')", (task,)
-    )
+    conn.execute("INSERT INTO tasks (task, status) VALUES (?, 'pending')", (task,))
     conn.commit()
     conn.close()
     return True
 
 
 def get_tasks():
-    """Return all pending tasks as a list of dicts."""
     conn = _get_conn()
     rows = conn.execute(
         "SELECT * FROM tasks WHERE status = 'pending' ORDER BY id"
@@ -66,17 +114,13 @@ def get_tasks():
 
 
 def get_all_tasks():
-    """Return ALL tasks (all statuses) as a list of dicts, newest first."""
     conn = _get_conn()
-    rows = conn.execute(
-        "SELECT * FROM tasks ORDER BY id DESC"
-    ).fetchall()
+    rows = conn.execute("SELECT * FROM tasks ORDER BY id DESC").fetchall()
     conn.close()
     return [dict(r) for r in rows]
 
 
 def count_pending() -> int:
-    """Return the number of pending tasks."""
     conn = _get_conn()
     n = conn.execute(
         "SELECT COUNT(*) FROM tasks WHERE status = 'pending'"
@@ -86,7 +130,6 @@ def count_pending() -> int:
 
 
 def complete_task(task_id: int, output: str = None):
-    """Mark a task done and optionally store its output."""
     conn = _get_conn()
     conn.execute(
         "UPDATE tasks SET status = 'done', output = ? WHERE id = ?",
@@ -97,7 +140,6 @@ def complete_task(task_id: int, output: str = None):
 
 
 def fail_task(task_id: int, reason: str = None):
-    """Mark a task failed with an optional reason."""
     conn = _get_conn()
     conn.execute(
         "UPDATE tasks SET status = 'failed', output = ? WHERE id = ?",
@@ -107,16 +149,92 @@ def fail_task(task_id: int, reason: str = None):
     conn.close()
 
 
-# ── AI Worker ─────────────────────────────────────────────────────────────────
+# ── Phase detection ───────────────────────────────────────────────────────────
+
+def detect_phase(task_text: str) -> str:
+    t = task_text.lower()
+    if any(k in t for k in ["build html", "create html", "generate html", "write html", "landing page", "webpage", "website"]):
+        return "build"
+    if any(k in t for k in ["push to github", "deploy", "upload to github"]):
+        return "deploy"
+    return "research"
+
+
+# ── Agent prompts ─────────────────────────────────────────────────────────────
+
+def research_prompt(task_id, task_text):
+    return f"""You are an autonomous AI agent for an Indian solo founder.
+
+Current task (ID {task_id}): {task_text}
+
+Do thorough research and produce useful output. Then:
+1. Pick the SINGLE BEST micro-SaaS idea from your research
+2. Queue the next step: building an HTML landing page for that idea
+
+Reply EXACTLY in this format:
+
+NEW_TASK: Build HTML landing page for [your chosen idea name] — a [one line description]
+COMPLETE_TASK_ID: {task_id}
+ACTION: Researched and selected best micro-SaaS idea
+
+OUTPUT_FILE: research.txt
+CONTENT:
+[Your full research output here. Include the chosen idea clearly at the top.]
+"""
+
+
+def build_prompt(task_id, task_text):
+    return f"""You are an expert web developer and copywriter.
+
+Task (ID {task_id}): {task_text}
+
+Build a complete, beautiful, single-file HTML landing page for this micro-SaaS product.
+
+Requirements:
+- Fully self-contained HTML (no external dependencies except Google Fonts CDN)
+- Modern dark design with gradient hero section
+- Sections: Hero, Problem, Solution, Features (3), Pricing (2 tiers), FAQ (3), Footer
+- Compelling Indian market focused copy
+- Mobile responsive
+- Email waitlist form (no backend needed, just UI)
+- Professional and investor-ready
+
+Reply EXACTLY in this format:
+
+NEW_TASK: Push index.html to GitHub for [idea name]
+COMPLETE_TASK_ID: {task_id}
+ACTION: Built complete HTML landing page
+
+OUTPUT_FILE: index.html
+CONTENT:
+[Your complete HTML here — must start with <!DOCTYPE html>]
+"""
+
+
+def deploy_prompt(task_id, task_text):
+    return f"""Task (ID {task_id}): {task_text}
+
+The HTML file has been pushed to GitHub successfully.
+
+Reply EXACTLY in this format:
+
+NEW_TASK: NONE
+COMPLETE_TASK_ID: {task_id}
+ACTION: Confirmed deployment to GitHub
+
+OUTPUT_FILE: deployment.txt
+CONTENT:
+Deployment complete. The landing page has been pushed to GitHub.
+Next steps:
+1. Enable GitHub Pages: repo Settings → Pages → Branch: main → Save
+2. Your site will be live at: https://{GITHUB_REPO.split('/')[0]}.github.io/{GITHUB_REPO.split('/')[1]}/
+3. Share the link and start collecting waitlist signups
+"""
+
+
+# ── Main agent loop ───────────────────────────────────────────────────────────
 
 def run_agent():
-    """
-    Main agent loop. Picks pending tasks one by one, calls the LLM,
-    parses the structured response, and updates the DB.
-    Runs continuously (called in a daemon thread by main.py).
-    """
-    import time
-
     while True:
         tasks = get_tasks()
 
@@ -124,41 +242,28 @@ def run_agent():
             time.sleep(10)
             continue
 
-        # Work on the oldest pending task
-        current = tasks[0]
+        current   = tasks[0]
         task_id   = current["id"]
         task_text = current["task"]
+        phase     = detect_phase(task_text)
 
-        # Mark as running
+        # Mark running
         conn = _get_conn()
         conn.execute("UPDATE tasks SET status = 'running' WHERE id = ?", (task_id,))
         conn.commit()
         conn.close()
 
-        prompt = f"""
-You are Deepak AI worker — an autonomous agent that completes tasks and plans ahead.
+        print(f"▶ Task {task_id} [{phase}]: {task_text[:60]}")
 
-Current task (ID {task_id}):
-{task_text}
+        # Pick prompt by phase
+        if phase == "build":
+            prompt = build_prompt(task_id, task_text)
+        elif phase == "deploy":
+            prompt = deploy_prompt(task_id, task_text)
+        else:
+            prompt = research_prompt(task_id, task_text)
 
-All pending tasks:
-{tasks}
-
-Do real, useful work on the current task. Then:
-1. Create ONE new follow-up task if it makes sense
-2. Produce a concrete output (research, plan, code, analysis, etc.)
-
-Reply EXACTLY in this format (no extra text before or after):
-
-NEW_TASK: <short description of the next task, or NONE>
-COMPLETE_TASK_ID: {task_id}
-ACTION: <one-line summary of what you did>
-
-OUTPUT_FILE: <filename.txt>
-CONTENT:
-<full useful content here>
-"""
-
+        # Call LLM
         try:
             result = think(prompt)
         except Exception as e:
@@ -166,36 +271,65 @@ CONTENT:
             time.sleep(5)
             continue
 
-        # ── Parse NEW_TASK ────────────────────────────────────────────────
+        # Parse NEW_TASK
+        new_task_text = None
         if "NEW_TASK:" in result:
             try:
-                new_task = result.split("NEW_TASK:")[1].split("\n")[0].strip()
-                if new_task and new_task.upper() != "NONE":
-                    add_task(new_task)
+                new_task_text = result.split("NEW_TASK:")[1].split("\n")[0].strip()
+                if new_task_text and new_task_text.upper() != "NONE":
+                    add_task(new_task_text)
+                    print(f"  ➕ Queued: {new_task_text[:60]}")
+                else:
+                    new_task_text = None
             except Exception:
                 pass
 
-        # ── Parse & save output file ──────────────────────────────────────
-        file_output = None
+        # Parse OUTPUT_FILE + CONTENT
+        file_output  = None
+        pushed_url   = None
+
         if "OUTPUT_FILE:" in result and "CONTENT:" in result:
             try:
                 filename = result.split("OUTPUT_FILE:")[1].split("\n")[0].strip()
                 content  = result.split("CONTENT:")[1].strip()
+
+                # Save locally
                 with open(filename, "w", encoding="utf-8") as f:
                     f.write(content)
-                print(f"✅ File created: {filename}")
+                print(f"  💾 Saved: {filename}")
                 file_output = content
-            except Exception as e:
-                print(f"File error: {e}")
 
-        # ── Complete the task ─────────────────────────────────────────────
+                # Push HTML files to GitHub automatically
+                if filename.endswith(".html"):
+                    print(f"  🚀 Pushing {filename} to GitHub...")
+                    push_result = push_to_github(
+                        filename,
+                        content,
+                        f"agent: auto-deploy {filename}"
+                    )
+                    if push_result["ok"]:
+                        pushed_url = push_result.get("url", "")
+                        print(f"  ✅ Pushed! {pushed_url}")
+                        file_output = content + f"\n\n---\n✅ Pushed to GitHub: {pushed_url}"
+                        # Queue deploy confirmation
+                        add_task(f"Push to GitHub complete — enable GitHub Pages to go live")
+                    else:
+                        err = push_result.get("error", "unknown")
+                        print(f"  ❌ Push failed: {err}")
+                        file_output = content + f"\n\n---\n❌ GitHub push failed: {err}"
+
+            except Exception as e:
+                print(f"  File error: {e}")
+
+        # Complete task
         if "COMPLETE_TASK_ID:" in result:
             try:
                 done_id = int(result.split("COMPLETE_TASK_ID:")[1].split("\n")[0].strip())
-                complete_task(done_id, output=file_output or result[:500])
+                complete_task(done_id, output=file_output or result[:1000])
             except Exception:
-                complete_task(task_id, output=file_output or result[:500])
+                complete_task(task_id, output=file_output or result[:1000])
         else:
-            complete_task(task_id, output=file_output or result[:500])
+            complete_task(task_id, output=file_output or result[:1000])
 
-        time.sleep(3)  # brief pause between tasks
+        print(f"  ✔ Done task {task_id}")
+        time.sleep(3)
