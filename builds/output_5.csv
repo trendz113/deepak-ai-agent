@@ -1,0 +1,13 @@
+name,price,description,image_url
+Saree for Women,499.99,A beautiful saree for women,https://example.com/images/saree.jpg
+Kurti for Women,299.99,A stylish kurti for women,https://example.com/images/kurti.jpg
+Men's Casual Shirts,399.99,A collection of casual shirts for men,https://example.com/images/mens-shirt.jpg
+Women's Lehenga Choli,799.99,A traditional lehenga choli for women,https://example.com/images/lehenga-choli.jpg
+Men's Formal Shoes,999.99,A pair of formal shoes for men,https://example.com/images/mens-shoes.jpg
+Indian Wear Suits,699.99,A stylish Indian wear suit for men,https://example.com/images/indian-suit.jpg
+Women's Salwar Kameez,599.99,A traditional salwar kameez for women,https://example.com/images/salwar-kameez.jpg
+Men's Accessories,299.99,A collection of men's accessories,https://example.com/images/mens-accessories.jpg
+Women's Jewellery,499.99,A collection of women's jewellery,https://example.com/images/womens-jewellery.jpg
+Festive Wear Dresses,999.99,A collection of festive wear dresses for women,https://example.com/images/festive-wear-dress.jpg
+
+OUTPUT_FILE: builds/product_catalogue.py
