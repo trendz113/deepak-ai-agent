@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Market Product Catalogue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #181818;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .product {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .product:hover {
+            background-color: #444;
+        }
+        .product img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-size: 100px 100px;
+            background-image: linear-gradient(to bottom right, #ff9900, #ffcc00);
+        }
+        .product-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 18px;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        .category {
+            font-size: 16px;
+            color: #ffffff;
+        }
+        .description {
+            font-size: 14px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .form {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .form input[type="email"] {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #444;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .form input[type="submit"] {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #ff9900;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        .form input[type="submit"]:hover {
+            background-color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Indian Market Product Catalogue</h1>
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price (INR)</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Apple iPhone 14</td>
+                    <td>₹99,999</td>
+                    <td>Latest iPhone model with 6.1-inch display, 12MP camera, and up to 16GB RAM.</td>
+                    <td>Mobiles</td>
+                </tr>
+                <tr>
+                    <td>Samsung QLED 4K TV</td>
+                    <td>₹1,49,999</td>
+                    <td>4K resolution, 120Hz refresh rate, and HDR10+ support for an immersive viewing experience.</td>
+                    <td>Electronics</td>
+                </tr>
+                <tr>
+                    <td>OnePlus 9 Pro</td>
+                    <td>₹69,999</td>
+                    <td>6.7-inch AMOLED display, quad-camera setup, and up to 12GB RAM for seamless performance.</td>
+                    <td>Mobiles</td>
+                </tr>
+                <tr>
+                    <td>LG OLED TV</td>
+                    <td>₹1,99,999</td>
+                    <td>4K resolution, 120Hz refresh rate, and HDR10+ support for a cinematic viewing experience.</td>
+                    <td>Electronics</td>
+                </tr>
+                <tr>
+                    <td>Sony WH-1000XM5</td>
+                    <td>₹29,990</td>
+                    <td>Industry-leading noise cancellation and up to 30 hours of battery life for a perfect listening experience.</td>
+                    <td>Audio</td>
+                </tr>
+                <tr>
+                    <td>Amazon Echo Dot</td>
+                    <td>₹4,499</td>
+                    <td>A compact smart speaker with Alexa voice assistant for convenient control over your smart home devices.</td>
+                    <td>Smart Home</td>
+                </tr>
+                <tr>
+                    <td>Google Pixel 6 Pro</td>
+                    <td>₹69,999</td>
+                    <td>6.7-inch OLED display, 50MP camera, and up to 12GB RAM for an exceptional smartphone experience.</td>
+                    <td>Mobiles</td>
+                </tr>
+                <tr>
+                    <td>HP Envy 14 Laptop</td>
+                    <td>₹99,999</td>
+                    <td>14-inch FHD display, 11th Gen Intel Core i7 processor, and up to 16GB RAM for productive performance.</td>
+                    <td>Laptops</td>
+                </tr>
+                <tr>
+                    <td>Samsung Galaxy Watch 4</td>
+                    <td>₹24,999</td>
+                    <td>A sleek smartwatch with 1.4-inch display, ECG monitoring, and up to 40 hours of battery life.</td>
+                    <td>Wearables</td>
+                </tr>
+                <tr>
+                    <td>Logitech G502 Gaming Mouse</td>
+                    <td>₹9,999</td>
+                    <td>A high-performance gaming mouse with 11 programmable buttons and 16,000 CPI optical sensor.</td>
+                    <td>Gaming</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="form">
+            <h2>Join Our Waitlist!</h2>
+            <p>Be the first to know about new products, promotions, and discounts!</p>
+            <form>
+                <input type="email" placeholder="Enter your email address" required>
+                <input type="submit" value="Join Now">
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add event listener to submit button
+        document.querySelector('form input[type="submit"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('Thank you for joining our waitlist!');
+        });
+    </script>
+</body>
+</html>
+
+CSV OUTPUT:
+Product Name,Price (INR),Description,Category
+Apple iPhone 14,99,999,Latest iPhone model with 6.1-inch display, 12MP camera, and up to 16GB RAM.,Mobiles
+Samsung QLED 4K TV,1,49,999,4K resolution, 120Hz refresh rate, and HDR10+ support for an immersive viewing experience.,Electronics
+OnePlus 9 Pro,69,999,6.7-inch AMOLED display, quad-camera setup, and up to 12GB RAM for seamless performance.,Mobiles
+LG OLED TV,1,99,999,4K resolution, 120Hz refresh rate, and HDR10+ support for a cinematic viewing experience.,Electronics
+Sony WH-1000XM5,29,990,Industry-leading noise cancellation and up to 30 hours of battery life for a perfect listening experience.,Audio
+Amazon Echo Dot,4,499,A compact smart speaker with Alexa voice assistant for convenient control over your smart home devices.,Smart Home
+Google Pixel 6 Pro,69,999,6.7-inch OLED display, 50MP camera, and up to 12GB RAM for an exceptional smartphone experience.,Mobiles
+HP Envy 14 Laptop,99,999,14-inch FHD display, 11th Gen Intel Core i7 processor, and up to 16GB RAM for productive performance.,Laptops
+Samsung Galaxy Watch 4,24,999,A sleek smartwatch with 1.4-inch display, ECG monitoring, and up to 40 hours of battery life.,Wearables
+Logitech G502 Gaming Mouse,9,999,A high-performance gaming mouse with 11 programmable buttons and
