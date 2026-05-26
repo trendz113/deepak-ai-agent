@@ -1,0 +1,169 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Market Product Catalogue</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .product-card {
+            background-color: #444;
+            border: 1px solid #555;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .product-card:hover {
+            background-color: #555;
+            cursor: pointer;
+        }
+        .fa {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Indian Market Product Catalogue</h1>
+        <button class="btn btn-primary mb-4" data-bs-toggle="collapse" data-bs-target="#waitlist-form">Join our waitlist</button>
+        <div id="waitlist-form" class="collapse">
+            <form action="https://example.com/waitlist-signup" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Join Waitlist</button>
+            </form>
+        </div>
+        <div class="row">
+            <?php
+            $products = array(
+                array(
+                    'Name' => 'Apple iPhone 13',
+                    'Price' => '₹ 69,900',
+                    'Description' => 'The latest iPhone 13 with 6GB RAM and 128GB storage.',
+                    'Category' => 'Electronics'
+                ),
+                array(
+                    'Name' => 'Samsung 65-inch QLED TV',
+                    'Price' => '₹ 149,999',
+                    'Description' => 'A 65-inch QLED TV with 4K resolution and HDR support.',
+                    'Category' => 'Electronics'
+                ),
+                array(
+                    'Name' => 'LG 5kg Fully-Automatic Washing Machine',
+                    'Price' => '₹ 25,999',
+                    'Description' => 'A 5kg fully-automatic washing machine with multiple wash programs.',
+                    'Category' => 'Home Appliances'
+                ),
+                array(
+                    'Name' => 'Bajaj Platini 1100W Mixer Grinder',
+                    'Price' => '₹ 3,499',
+                    'Description' => 'A 1100W mixer grinder with multiple speed settings and stainless steel blades.',
+                    'Category' => 'Home Appliances'
+                ),
+                array(
+                    'Name' => 'Canon EOS 1500D DSLR Camera',
+                    'Price' => '₹ 24,999',
+                    'Description' => 'A 24.1MP DSLR camera with 18-55mm lens and Wi-Fi connectivity.',
+                    'Category' => 'Electronics'
+                ),
+                array(
+                    'Name' => 'Sony WH-1000XM4 Wireless Headphones',
+                    'Price' => '₹ 29,990',
+                    'Description' => 'Industry-leading wireless headphones with noise-cancellation and long battery life.',
+                    'Category' => 'Electronics'
+                ),
+                array(
+                    'Name' => 'Puravankara 1BHK Apartment in Bangalore',
+                    'Price' => '₹ 45 lakhs',
+                    'Description' => 'A 1BHK apartment in a prime location with modern amenities.',
+                    'Category' => 'Real Estate'
+                ),
+                array(
+                    'Name' => 'Maruti Suzuki Swift VXI Petrol',
+                    'Price' => '₹ 7.39 lakhs',
+                    'Description' => 'A petrol variant of the popular Swift model with multiple features.',
+                    'Category' => 'Vehicles'
+                ),
+                array(
+                    'Name' => 'Volkswagen Polo TSI Trendline',
+                    'Price' => '₹ 8.30 lakhs',
+                    'Description' => 'A turbocharged petrol variant of the Polo model with advanced features.',
+                    'Category' => 'Vehicles'
+                ),
+                array(
+                    'Name' => 'Tata Nexon XZ Plus Petrol',
+                    'Price' => '₹ 12.70 lakhs',
+                    'Description' => 'A petrol variant of the Nexon model with multiple features and advanced safety features.',
+                    'Category' => 'Vehicles'
+                )
+            );
+            ?>
+            <?php
+            foreach ($products as $product) {
+                echo '<div class="col-md-4">';
+                echo '<div class="product-card">';
+                echo '<h2>' . $product['Name'] . '</h2>';
+                echo '<p>' . $product['Price'] . '</p>';
+                echo '<p>' . $product['Description'] . '</p>';
+                echo '<p>Category: ' . $product['Category'] . '</p>';
+                echo '<button class="btn btn-primary">Buy Now</button>';
+                echo '</div>';
+                echo '</div>';
+            }
+            ?>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(function() {
+            // Add event listener to collapse button
+            $('.collapse').on('shown.bs.collapse', function() {
+                $(this).prev('.btn').addClass('active');
+            });
+            $('.collapse').on('hidden.bs.collapse', function() {
+                $(this).prev('.btn').removeClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
+```
+CSV PRODUCT CATALOGUE:
+```csv
+Name,Price,Description,Category
+Apple iPhone 13,₹ 69,900,The latest iPhone 13 with 6GB RAM and 128GB storage.,Electronics
+Samsung 65-inch QLED TV,₹ 149,999,A 65-inch QLED TV with 4K resolution and HDR support.,Electronics
+LG 5kg Fully-Automatic Washing Machine,₹ 25,999,A 5kg fully-automatic washing machine with multiple wash programs.,Home Appliances
+Bajaj Platini 1100W Mixer Grinder,₹ 3,499,A 1100W mixer grinder with multiple speed settings and stainless steel blades.,Home Appliances
+Canon EOS 1500D DSLR Camera,₹ 24,999,A 24.1MP DSLR camera with 18-55mm lens and Wi-Fi connectivity.,Electronics
+Sony WH-1000XM4 Wireless Headphones,₹ 29,990,Industry-leading wireless headphones with noise-cancellation and long battery life.,Electronics
+Puravankara 1BHK Apartment in Bangalore,₹ 45 lakhs,A 1BHK apartment in a prime location with modern amenities.,Real Estate
+Maruti Suzuki Swift VXI Petrol,₹ 7.39 lakhs,A petrol variant of the popular Swift model with multiple features.,Vehicles
+Volkswagen Polo TSI Trendline,₹ 8.30 lakhs,A turbocharged petrol variant of the Polo model with advanced features.,Vehicles
+Tata Nexon XZ Plus Petrol,₹ 12.70 lakhs,A petrol variant of the Nexon model with multiple features and advanced safety features.,Vehicles
+```
