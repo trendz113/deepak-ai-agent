@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Online Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-e6Iq/QUkqNewYBAUdo6UJEmzB4guhj/tw9vC9U7ja0sdyVcVPjvFq1NxTWUH/Eubke777W/c2Qdcfku1l53AjQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-10soq1ddMYYWShnrK Bryan6fGFdsJorERC0xT+ySuB+uutvwl81mbfpxVMaNwhMVCeEdt09KtC4zAfdrhez6yIkQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .dark-theme {
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+        .dark-theme a {
+            color: #4CAF50;
+        }
+        .dark-theme a:hover {
+            color: #3e8e41;
+        }
+        .product {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .product h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .product p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .product .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .product {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <h1>Indian Online Store</h1>
+        <p>Welcome to our online store! We offer a wide range of products at competitive prices.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product">
+                    <h2>Product 1</h2>
+                    <p>This is a sample product.</p>
+                    <p class="price">₹ 499</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product">
+                    <h2>Product 2</h2>
+                    <p>This is another sample product.</p>
+                    <p class="price">₹ 999</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product">
+                    <h2>Product 3</h2>
+                    <p>This is yet another sample product.</p>
+                    <p class="price">₹ 1499</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Product List</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Product 1</td>
+                            <td>499</td>
+                        </tr>
+                        <tr>
+                            <td>Product 2</td>
+                            <td>999</td>
+                        </tr>
+                        <tr>
+                            <td>Product 3</td>
+                            <td>1499</td>
+                        </tr>
+                        <tr>
+                            <td>Product 4</td>
+                            <td>1999</td>
+                        </tr>
+                        <tr>
+                            <td>Product 5</td>
+                            <td>2999</td>
+                        </tr>
+                        <tr>
+                            <td>Product 6</td>
+                            <td>3999</td>
+                        </tr>
+                        <tr>
+                            <td>Product 7</td>
+                            <td>4999</td>
+                        </tr>
+                        <tr>
+                            <td>Product 8</td>
+                            <td>5999</td>
+                        </tr>
+                        <tr>
+                            <td>Product 9</td>
+                            <td>6999</td>
+                        </tr>
+                        <tr>
+                            <td>Product 10</td>
+                            <td>7999</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Stay Updated!</h2>
+                <p>Join our email list to get the latest updates and promotions.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-S+GDGF+CR5ShOFpBOmTNciE1YGTo9lfcSGR12Mvoq58NvwHncjPPadN8CRL4Sr8xkt0RvbpLnFqlPsLy89HuJeQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            $('#email').on('input', function(){
+                if($(this).val() !== '') {
+                    $(this).css('border', '1px solid #ccc');
+                } else {
+                    $(this).css('border', '1px solid #f00');
+                }
+            });
+            $('#email').on('focus', function(){
+                $(this).css('border', '1px solid #ccc');
+            });
+        });
+    </script>
+</body>
+</html>
