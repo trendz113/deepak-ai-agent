@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak's Online Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-e6Iq-BSXaPEkaJ47nUmumxf4wIx0TPGvHB9rzG8y5CrXR5OvY8LFzO/2B8poj7GmOyji0Ca9cZQZAFHCCMick" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-10sOHhdlWn54E0H5owTPDkgy3AlWO6jQNAk6K2XNRCfJJj1uV/iem9Th1EdasRsGHL7Wzp7qynwVNLpFmwMyw==">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #333333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #444444;
+        }
+        .header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-image: linear-gradient(to bottom, #ff0000, #ff0000);
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-card {
+            background-color: #444444;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .product-card h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+            padding: 0;
+        }
+        .product-card p {
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+        .product-card button {
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .product-card button:hover {
+            background-color: #cc0000;
+        }
+        .waitlist {
+            background-color: #333333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .waitlist h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+            padding: 0;
+        }
+        .waitlist form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .waitlist input[type="email"] {
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-bottom: 1px solid #444444;
+            margin: 10px 0;
+        }
+        .waitlist input[type="submit"] {
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .waitlist input[type="submit"]:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="🔥" alt="Logo">
+            <h1>Deepak's Online Store</h1>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="📦" alt="Product 1">
+                <h2>Product 1</h2>
+                <p>₹999</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="📦" alt="Product 2">
+                <h2>Product 2</h2>
+                <p>₹1999</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="📦" alt="Product 3">
+                <h2>Product 3</h2>
+                <p>₹2999</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="waitlist">
+            <h2>Join our waitlist!</h2>
+            <form>
+                <input type="email" placeholder="Enter your email address">
+                <input type="submit" value="Sign up">
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-S+GDGF+CR5ShAFmsNVyZ9kY8D5TdWEU6KUYgUQh53T0tXuOIv2wlzyIwAFhKyxwR1FeEc1g9ECbAEF52JtwJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Add JavaScript code here...
+    </script>
+</body>
+</html>
