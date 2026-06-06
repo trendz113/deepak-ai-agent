@@ -1,0 +1,186 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian-Inspired Fashion Store</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTkvLP/7G5K9ngnJQ78YVtW" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .row {
+            margin-bottom: 20px;
+        }
+        .product {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .product-name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+        .email-form {
+            margin-bottom: 20px;
+        }
+        .email-form input[type="email"] {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            background-color: #f7f7f7;
+        }
+        .email-form button[type="submit"] {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        .email-form button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 style="text-align: center;">Indian-Inspired Fashion Store</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Description</th>
+                            <th>Price (₹)</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Traditional Kurta</td>
+                            <td>Cotton kurta with intricate embroidery.</td>
+                            <td>2999</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Handloom Sari</td>
+                            <td>Soft and lightweight silk sari with traditional print.</td>
+                            <td>4999</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>Embroidered Dupatta</td>
+                            <td>Beautiful dupatta with intricate embroidery and sequins.</td>
+                            <td>1999</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>Multicolored Lehenga</td>
+                            <td>Festive lehenga with intricate embroidery and mirror work.</td>
+                            <td>6999</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Simple Kurti</td>
+                            <td>Comfortable and stylish kurti for everyday wear.</td>
+                            <td>1499</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>Designer Anarkali</td>
+                            <td>Feminine anarkali suit with intricate embroidery and sequins.</td>
+                            <td>9999</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Embroidered Churidar</td>
+                            <td>Beautiful churidar with intricate embroidery and sequins.</td>
+                            <td>2499</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>Traditional Juttis</td>
+                            <td>Handmade juttis with intricate embroidery and mirror work.</td>
+                            <td>1499</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>Embroidered Scarf</td>
+                            <td>Beautiful scarf with intricate embroidery and sequins.</td>
+                            <td>499</td>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <td>Designer Shawl</td>
+                            <td>Feminine shawl with intricate embroidery and sequins.</td>
+                            <td>999</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Embroidered Bag</td>
+                            <td>Beautiful bag with intricate embroidery and sequins.</td>
+                            <td>1499</td>
+                            <td>40</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="email-form">
+                    <h2>Join our waitlist!</h2>
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            // Add active class to current page
+            var url = window.location.href;
+            $('a[href="' + url + '"]').parent().addClass('active');
+        });
+    </script>
+</body>
+</html>
+```
