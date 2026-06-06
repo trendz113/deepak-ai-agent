@@ -1,0 +1,161 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayushman - Unique Indian-Inspired Fashion</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0f0f0f;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #202020;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+        }
+        .product {
+            background-color: #2b2b2b;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .product h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+        .product p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        .product span {
+            font-size: 24px;
+            color: #ccc;
+        }
+        .form {
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .form h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+        .form input[type="email"] {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .form button[type="submit"] {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .form button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Ayushman - Unique Indian-Inspired Fashion</h1>
+            <p>Experience the essence of Indian culture through our exclusive fashion products.</p>
+        </div>
+        <h2>Latest Collections</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://emojipedia-us.s3.amazonaws.com/source/png/256/1345/indian-sari_256.png" alt="Indian Sari">
+                <h2>Indian Sari</h2>
+                <p>₹1,499.00</p>
+                <span>FREE Shipping</span>
+            </div>
+            <div class="product">
+                <img src="https://emojipedia-us.s3.amazonaws.com/source/png/256/1345/mumbai-street-food_256.png" alt="Mumbai Street Food">
+                <h2>Mumbai Street Food</h2>
+                <p>₹999.00</p>
+                <span>FREE Shipping</span>
+            </div>
+            <div class="product">
+                <img src="https://emojipedia-us.s3.amazonaws.com/source/png/256/1345/hindu-goddess_256.png" alt="Hindu Goddess">
+                <h2>Hindu Goddess</h2>
+                <p>₹1,299.00</p>
+                <span>FREE Shipping</span>
+            </div>
+            <div class="product">
+                <img src="https://emojipedia-us.s3.amazonaws.com/source/png/256/1345/diwali-lights_256.png" alt="Diwali Lights">
+                <h2>Diwali Lights</h2>
+                <p>₹499.00</p>
+                <span>FREE Shipping</span>
+            </div>
+        </div>
+        <div class="form">
+            <h2>Join Our Waitlist!</h2>
+            <input type="email" placeholder="Enter your email address">
+            <button type="submit">Subscribe</button>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.form button[type="submit"]').click(function() {
+                var email = $('input[type="email"]').val();
+                if (email != '') {
+                    alert('Thank you for joining our waitlist!');
+                    $('input[type="email"]').val('');
+                } else {
+                    alert('Please enter your email address!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+```
