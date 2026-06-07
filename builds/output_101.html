@@ -1,0 +1,184 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian-Inspired Home Decor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-x+OjJ9mHZmct2E1cwQGUh3GO8vsilgTDC5sC1zmAW1ZPU+Uzd16lnVEfKnH2Mvih9sdWm0mLIkWO7Ydw+yBEg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcJ yang+y0wFNbfFPOv6W8eKsFqguMrciNX+Bk2gtyZeOw+GD7cmr7YpT71h+tAF5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Playfair Display', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #fff;
+            background-color: #0f0f0f;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .header {
+            background-color: #444;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .header h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-grid .product {
+            background-color: #555;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .product-grid .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .product-grid .product .title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .product-grid .product .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .product-grid .product .description {
+            font-size: 16px;
+            color: #ccc;
+        }
+        .waitlist {
+            padding: 20px;
+            background-color: #444;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .waitlist h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .waitlist input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .waitlist input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #555;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .waitlist input[type="submit"]:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Indian-Inspired Home Decor</h1>
+            <h2>Welcome to our store!</h2>
+        </div>
+        <div class="product-grid">
+            <div class="product">
+                <img src="🏠" alt="Product 1">
+                <h3 class="title">Mumbai Mosaic Art</h3>
+                <p class="price">₹1,499</p>
+                <p class="description">A beautiful mosaic art piece inspired by the vibrant streets of Mumbai.</p>
+            </div>
+            <div class="product">
+                <img src="🏠" alt="Product 2">
+                <h3 class="title">Delhi Dye Art</h3>
+                <p class="price">₹999</p>
+                <p class="description">A stunning dye art piece inspired by the colorful markets of Delhi.</p>
+            </div>
+            <div class="product">
+                <img src="🏠" alt="Product 3">
+                <h3 class="title">Kerala Wooden Carving</h3>
+                <p class="price">₹2,499</p>
+                <p class="description">A beautiful wooden carving piece inspired by the traditional craftsmanship of Kerala.</p>
+            </div>
+            <div class="product">
+                <img src="🏠" alt="Product 4">
+                <h3 class="title">Goa Tile Art</h3>
+                <p class="price">₹1,999</p>
+                <p class="description">A stunning tile art piece inspired by the colorful architecture of Goa.</p>
+            </div>
+            <div class="product">
+                <img src="🏠" alt="Product 5">
+                <h3 class="title">Pune Print Art</h3>
+                <p class="price">₹1,299</p>
+                <p class="description">A beautiful print art piece inspired by the vibrant culture of Pune.</p>
+            </div>
+            <div class="product">
+                <img src="🏠" alt="Product 6">
+                <h3 class="title">Agra Marble Art</h3>
+                <p class="price">₹2,999</p>
+                <p class="description">A stunning marble art piece inspired by the majestic architecture of Agra.</p>
+            </div>
+            <div class="product">
+                <img src="🏠" alt="Product 7">
+                <h3 class="title">Bangalore Fabric Art</h3>
+                <p class="price">₹1,499</p>
+                <p class="description">A beautiful fabric art piece inspired by the vibrant textile culture of Bangalore.</p>
+            </div>
+            <div class="product">
+                <img src="🏠" alt="Product 8">
+                <h3 class="title">Chennai Bronze Art</h3>
+                <p class="price">₹2,499</p>
+                <p class="description">A stunning bronze art piece inspired by the rich cultural heritage of Chennai.</p>
+            </div>
+            <div class="product">
+                <img src="🏠" alt="Product 9">
+                <h3 class="title">Hyderabad Stone Carving</h3>
+                <p class="price">₹3,999</p>
+                <p class="description">A beautiful stone carving piece inspired by the traditional craftsmanship of Hyderabad.</p>
+            </div>
+            <div class="product">
+                <img src="🏠" alt="Product 10">
+                <h3 class="title">Jaipur Glass Art</h3>
+                <p class="price">₹2,999</p>
+                <p class="description">A stunning glass art piece inspired by the vibrant markets of Jaipur.</p>
+            </div>
+        </div>
+        <div class="waitlist">
+            <h2>Join our waitlist!</h2>
+            <p>Get notified when our store is open for business.</p>
+            <input type="email" placeholder="Enter your email address">
+            <input type="submit" value="Join Waitlist">
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="
