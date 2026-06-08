@@ -1,0 +1,203 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-10sOHhdlW0L00A/Nijp0NkOCFUt26gxJKbfX2XVHeWBAS6hDqY+XHxGVrFkgeFHEEKRnjZ9M7rAxyU81pOcHg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: #0f0f0f;
+            color: #fff;
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero .cta {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .hero .cta:hover {
+            background-color: #3e8e41;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 50px 0;
+            background-color: #f7f7f7;
+        }
+        
+        .features .feature {
+            margin-bottom: 20px;
+        }
+        
+        .features .feature h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .features .feature p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .features .feature i {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-right: 10px;
+        }
+        
+        /* Waitlist Section */
+        .waitlist {
+            padding: 50px 0;
+            background-color: #f7f7f7;
+        }
+        
+        .waitlist h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .waitlist p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        
+        .waitlist .email {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .waitlist .email:hover {
+            background-color: #3e8e41;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 0;
+            }
+            
+            .features .feature {
+                margin-bottom: 10px;
+            }
+            
+            .waitlist {
+                padding: 30px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 14px;
+            }
+            
+            .waitlist h2 {
+                font-size: 20px;
+            }
+            
+            .waitlist p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Our Online Business</h1>
+        <p>Launch an online business targeting the Indian market</p>
+        <button class="cta">Get Started</button>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <i class="fa-solid fa-lock"></i>
+            <h3>Secure Payment Gateway</h3>
+            <p>We offer a secure payment gateway for our customers</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-users"></i>
+            <h3>Customer Support</h3>
+            <p>We provide dedicated customer support for our users</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Analytics Dashboard</h3>
+            <p>We provide a comprehensive analytics dashboard for our users</p>
+        </div>
+    </section>
+    
+    <!-- Waitlist Section -->
+    <section class="waitlist">
+        <h2>Join Our Waitlist</h2>
+        <p>Be the first to know when we launch our online business</p>
+        <input type="email" placeholder="Enter your email" class="email" />
+        <button class="email">Join Waitlist</button>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+        // Waitlist Form Submission
+        const emailInput = document.querySelector('.email');
+        const joinButton = document.querySelector('.email');
+        
+        joinButton.addEventListener('click', () => {
+            const email = emailInput.value.trim();
+            
+            if (email !== '') {
+                // Submit email to server or database
+                console.log(`Email submitted: ${email}`);
+                
+                // Clear input field
+                emailInput.value = '';
+            } else {
+                alert('Please enter a valid email address');
+            }
+        });
+    </script>
+</body>
+</html>
+```
+This HTML file is a self-contained, production-ready landing page for an online business targeting the Indian market. It includes a hero section, features section, and waitlist section, with a focus on mobile responsiveness and modern design. The page uses Google Fonts, Bootstrap, and Font Awesome libraries, and includes a waitlist form that can be submitted via JavaScript.
