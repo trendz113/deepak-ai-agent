@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Handicrafts - Buy Unique Handmade Crafts Online</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-e6Iq-BSXaPEkaJ47uNM7MwZZD/isI/UJWLpO+rxsmMNjdsyUdmgDYKY3FskwetJL79KD8QhLLZBF2He91K9HpA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVrRLGIgw/UM7JE00u3CZR5yPe+tOeS8Dd6CViaK3hIkaLly97ckw8+h/9fi6EJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .dark-theme {
+            background-color: #0f0f0f;
+            color: #fff;
+        }
+        .hero-section {
+            background-image: linear-gradient(to bottom, #333, #444);
+            padding: 10rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .hero-section p {
+            font-size: 1.5rem;
+            color: #ccc;
+        }
+        .features-section {
+            padding: 5rem 0;
+        }
+        .features-section .feature {
+            background-color: #333;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 1rem;
+            display: inline-block;
+            width: calc(33.33% - 1rem);
+        }
+        .features-section .feature h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .features-section .feature p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        .waitlist-section {
+            padding: 5rem 0;
+            background-color: #333;
+            color: #fff;
+        }
+        .waitlist-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .waitlist-section form {
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .waitlist-section form input[type="email"] {
+            padding: 1rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 0.5rem;
+            width: 80%;
+        }
+        .waitlist-section form button[type="submit"] {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: #0f0f0f;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <h1>Indian Handicrafts - Buy Unique Handmade Crafts Online</h1>
+        <p>Experience the beauty of Indian handicrafts, handcrafted with love and care by skilled artisans.</p>
+    </div>
+    <div class="features-section">
+        <div class="feature">
+            <h2>Unique Handmade Crafts</h2>
+            <p>Each product is a masterpiece, crafted with attention to detail and a passion for perfection.</p>
+        </div>
+        <div class="feature">
+            <h2>Authentic Indian Products</h2>
+            <p>Our products are authentic Indian handicrafts, made with natural materials and traditional techniques.</p>
+        </div>
+        <div class="feature">
+            <h2>Supporting Artisans</h2>
+            <p>By buying from us, you are supporting skilled artisans and their families, helping to preserve Indian craft traditions.</p>
+        </div>
+    </div>
+    <div class="waitlist-section">
+        <h2>Join Our Waitlist!</h2>
+        <form>
+            <input type="email" placeholder="Enter your email address">
+            <button type="submit">Join Now</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-SmNVuaQ0Mq7nxT7KDbU5axEHPYoTs0+0EV6T8JU5yK6yWM5Nqyn4MaMko4DpaDvjJamesYUD4eCF1oJZ63cdXw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Waitlist form submission handler
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            console.log('Waitlist form submitted:', event.target.email.value);
+        });
+    </script>
+</body>
+</html>
