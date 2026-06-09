@@ -1,0 +1,217 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Traditional Crafts</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0f0f0f;
+            font-family: 'Rubik', sans-serif;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #171717;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .nav-link {
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+        .nav-link:hover {
+            background-color: #333;
+        }
+        .card {
+            background-color: #222;
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .card-body {
+            background-color: #171717;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .card-text {
+            font-size: 14px;
+            color: #aaa;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Indian Traditional Crafts</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Email" aria-label="Search">
+                <button class="btn my-2 my-sm-0" type="submit">Join Waitlist</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="text-center">Indian Traditional Crafts</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Handmade Wooden Box</h5>
+                        <p class="card-text">₹ 2,499</p>
+                        <p class="card-text">Handcrafted wooden box with intricate designs and patterns.</p>
+                        <button class="btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Handmade Handloom Sari</h5>
+                        <p class="card-text">₹ 4,999</p>
+                        <p class="card-text">Handwoven handloom sari with traditional Indian designs and patterns.</p>
+                        <button class="btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Handmade Paper Mache Art</h5>
+                        <p class="card-text">₹ 1,999</p>
+                        <p class="card-text">Handcrafted paper mache art with intricate designs and patterns.</p>
+                        <button class="btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-center">Product Catalogue (CSV)</h1>
+        <button class="btn" onclick="exportCSV()">Export to CSV</button>
+        <div id="csv-data" style="display: none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price (₹)</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Handmade Wooden Box</td>
+                        <td>2499</td>
+                        <td>Handcrafted wooden box with intricate designs and patterns.</td>
+                        <td>Home Decor</td>
+                    </tr>
+                    <tr>
+                        <td>Handmade Handloom Sari</td>
+                        <td>4999</td>
+                        <td>Handwoven handloom sari with traditional Indian designs and patterns.</td>
+                        <td>Clothing</td>
+                    </tr>
+                    <tr>
+                        <td>Handmade Paper Mache Art</td>
+                        <td>1999</td>
+                        <td>Handcrafted paper mache art with intricate designs and patterns.</td>
+                        <td>Home Decor</td>
+                    </tr>
+                    <tr>
+                        <td>Handmade Brass Sculpture</td>
+                        <td>3999</td>
+                        <td>Handcrafted brass sculpture with intricate designs and patterns.</td>
+                        <td>Home Decor</td>
+                    </tr>
+                    <tr>
+                        <td>Handmade Embroidered Sari</td>
+                        <td>5999</td>
+                        <td>Handwoven embroidered sari with traditional Indian designs and patterns.</td>
+                        <td>Clothing</td>
+                    </tr>
+                    <tr>
+                        <td>Handmade Leather Wallet</td>
+                        <td>1499</td>
+                        <td>Handcrafted leather wallet with intricate designs and patterns.</td>
+                        <td>Accessories</td>
+                    </tr>
+                    <tr>
+                        <td>Handmade Handmade Pottery</td>
+                        <td>2999</td>
+                        <td>Handcrafted handmade pottery with intricate designs and patterns.</td>
+                        <td>Home Decor</td>
+                    </tr>
+                    <tr>
+                        <td>Handmade Printed Sari</td>
+                        <td>3999</td>
+                        <td>Handwoven printed sari with traditional Indian designs and patterns.</td>
+                        <td>Clothing</td>
+                    </tr>
+                    <tr>
+                        <td>Handmade Wooden Furniture</td>
+                        <td>5999</td>
+                        <td>Handcrafted wooden furniture with intricate designs and patterns.</td>
+                        <td>Home Decor</td>
+                    </tr>
+                    <tr>
+                        <td>Handmade Handmade Jewelry</td>
+                        <td>4999</td>
+                        <td>Handcrafted handmade jewelry with intricate designs and patterns.</td>
+                        <td>Accessories</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function exportCSV() {
+            var csvData = $("#csv-data table").html();
+            var csvFile = "product_catalogue.csv";
+            var link = document.createElement("a");
+            link.href = "data:text/csv," + encodeURI(csvData);
+            link.download = csvFile;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
+```
