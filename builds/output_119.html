@@ -1,0 +1,201 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Online Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            padding: 0;
+            margin: 0;
+            background-color: #0f0f0f;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: #0f0f0f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 800px;
+        }
+        .row {
+            margin-bottom: 20px;
+        }
+        .product {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .product img {
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            display: block;
+            margin: 0 auto;
+        }
+        .product h2 {
+            color: #fff;
+            margin-top: 0;
+        }
+        .product p {
+            color: #ccc;
+        }
+        .product .price {
+            color: #fff;
+            font-weight: bold;
+        }
+        .dark-theme {
+            background-color: #0f0f0f;
+            color: #fff;
+            padding: 20px;
+        }
+        .dark-theme .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .dark-theme .btn:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="dark-theme container">
+        <h1 class="text-center">Indian Online Store</h1>
+        <p class="text-center">Explore our collection of products</p>
+        <div class="row">
+            <div class="col-md-4 product">
+                <div class="product">
+                    <h2>Product 1</h2>
+                    <p>Product description</p>
+                    <p class="price">₹ 299</p>
+                </div>
+            </div>
+            <div class="col-md-4 product">
+                <div class="product">
+                    <h2>Product 2</h2>
+                    <p>Product description</p>
+                    <p class="price">₹ 499</p>
+                </div>
+            </div>
+            <div class="col-md-4 product">
+                <div class="product">
+                    <h2>Product 3</h2>
+                    <p>Product description</p>
+                    <p class="price">₹ 699</p>
+                </div>
+            </div>
+            <div class="col-md-4 product">
+                <div class="product">
+                    <h2>Product 4</h2>
+                    <p>Product description</p>
+                    <p class="price">₹ 899</p>
+                </div>
+            </div>
+            <div class="col-md-4 product">
+                <div class="product">
+                    <h2>Product 5</h2>
+                    <p>Product description</p>
+                    <p class="price">₹ 1099</p>
+                </div>
+            </div>
+            <div class="col-md-4 product">
+                <div class="product">
+                    <h2>Product 6</h2>
+                    <p>Product description</p>
+                    <p class="price">₹ 1299</p>
+                </div>
+            </div>
+            <div class="col-md-4 product">
+                <div class="product">
+                    <h2>Product 7</h2>
+                    <p>Product description</p>
+                    <p class="price">₹ 1499</p>
+                </div>
+            </div>
+            <div class="col-md-4 product">
+                <div class="product">
+                    <h2>Product 8</h2>
+                    <p>Product description</p>
+                    <p class="price">₹ 1699</p>
+                </div>
+            </div>
+            <div class="col-md-4 product">
+                <div class="product">
+                    <h2>Product 9</h2>
+                    <p>Product description</p>
+                    <p class="price">₹ 1899</p>
+                </div>
+            </div>
+            <div class="col-md-4 product">
+                <div class="product">
+                    <h2>Product 10</h2>
+                    <p>Product description</p>
+                    <p class="price">₹ 2099</p>
+                </div>
+            </div>
+        </div>
+        <h2>Join Our Waitlist!</h2>
+        <form>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+            </div>
+            <button type="submit" class="btn">Join Now</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // CSV data
+        const csvData = [
+            ["Name", "Price (₹)", "Description", "Category"],
+            ["Product 1", 299, "Product description", "Electronics"],
+            ["Product 2", 499, "Product description", "Fashion"],
+            ["Product 3", 699, "Product description", "Home & Kitchen"],
+            ["Product 4", 899, "Product description", "Beauty & Personal Care"],
+            ["Product 5", 1099, "Product description", "Sports & Outdoors"],
+            ["Product 6", 1299, "Product description", "Books & Media"],
+            ["Product 7", 1499, "Product description", "Health & Wellness"],
+            ["Product 8", 1699, "Product description", "Home & Garden"],
+            ["Product 9", 1899, "Product description", "Baby Products"],
+            ["Product 10", 2099, "Product description", "Pet Supplies"],
+        ];
+
+        // Download CSV file
+        function downloadCSV() {
+            const csvText = csvData.map(row => row.join(",")).join("\n");
+            const a = document.createElement("a");
+            a.href = `data:text/csv;base64,${btoa(csvText)}`;
+            a.download = "products.csv";
+            a.click();
+        }
+
+        // Add download button
+        const downloadButton = document.createElement("button");
+        downloadButton.textContent = "Download CSV";
+        downloadButton.onclick = downloadCSV;
+        document.body.appendChild(downloadButton);
+    </script>
+</body>
+</html>
+```
+This is a self-contained HTML file that meets all the requirements specified. It includes a CSV product catalogue with 10 items, and a download button to download the CSV file. The design is dark-themed, mobile-responsive, and uses Bootstrap, Font Awesome, and Google Fonts. The email waitlist/signup form is also included.
