@@ -1,0 +1,159 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch India's Next Big Business</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        .hero {
+            background: linear-gradient(to bottom, #0f0f0f, #2d2d2d);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        
+        .hero .heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .hero .subheading {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        
+        .features {
+            padding: 100px 0;
+        }
+        
+        .features .feature {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .features .feature h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .waitlist {
+            padding: 100px 0;
+            background: #f0f0f0;
+        }
+        
+        .waitlist .heading {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .waitlist .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .waitlist .form-control {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        
+        .waitlist .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 50vh;
+            }
+            
+            .hero .heading {
+                font-size: 1.5rem;
+            }
+            
+            .hero .subheading {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1 class="heading">Launch India's Next Big Business</h1>
+        <p class="subheading">Join the waitlist to be the first to know when we launch!</p>
+    </div>
+    <div class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Easy to Use</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Fast Growth</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <i class="fas fa-lock"></i>
+                    <h3>Security</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="waitlist">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h2 class="heading">Join the Waitlist</h2>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn" type="submit">Join Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // waitlist form submit
+            $('form').submit(function(e) {
+                e.preventDefault();
+                var email = $('input[type="email"]').val();
+                // send email to server using AJAX or API
+                console.log('Email:', email);
+            });
+        });
+    </script>
+</body>
+</html>
+```
