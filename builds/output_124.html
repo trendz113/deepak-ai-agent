@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ayurvedic & Wellness Store - India</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f7f7f7;
+            transition: background-color 0.3s ease;
+        }
+        .dark-mode {
+            background-color: #0f0f0f;
+            color: #fff;
+        }
+        .dark-mode a {
+            color: #87ceeb;
+        }
+        .dark-mode a:hover {
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #8bc34a, #4CAF50);
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .product h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .product p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .product button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background-color: #3e8e41;
+        }
+        .footer {
+            background-color: #0f0f0f;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #87ceeb;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="dark-mode">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Ayurvedic & Wellness Store - India</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#emailModal">Join Waitlist</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <h1>Welcome to Ayurvedic & Wellness Store - India</h1>
+            <p>Discover the ancient secrets of Ayurveda and unlock a healthier you</p>
+        </div>
+        <div class="container">
+            <div class="products">
+                <div class="product">
+                    <img src="https://emojipedia-us.s3.amazonaws.com/source/google-emoji-cdn/3/0x1f9d1.png" alt="Turmeric">
+                    <h2>Turmeric Powder</h2>
+                    <p>100% pure and natural turmeric powder, sourced from the finest farms in India</p>
+                    <button>Buy Now ₹ 200</button>
+                </div>
+                <div class="product">
+                    <img src="https://emojipedia-us.s3.amazonaws.com/source/google-emoji-cdn/3/0x1f9d0.png" alt="Ginger">
+                    <h2>Fresh Ginger</h2>
+                    <p>Sourced from the mountains of Himalayas, our fresh ginger is a must-have for any kitchen</p>
+                    <button>Buy Now ₹ 150</button>
+                </div>
+                <div class="product">
+                    <img src="https://emojipedia-us.s3.amazonaws.com/source/google-emoji-cdn/3/0x1f9d2.png" alt="Cumin Seeds">
+                    <h2>Cumin Seeds</h2>
+                    <p>100% pure and natural cumin seeds, sourced from the finest farms in India</p>
+                    <button>Buy Now ₹ 250</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2023 Ayurvedic & Wellness Store - India</p>
+        <p>Developed by <a href="#">Deepak's AI Assistant</a></p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".dark-mode").on("click", function(){
+                $("body").toggleClass("dark-mode");
+            });
+            $("#emailModal").on("show.bs.modal", function(){
+                $("#emailModal .modal-body").html("<h4>Please enter your email address</h4><input type='email' id='email' placeholder='Enter your email'><button id='submit' class='btn btn-primary'>Submit</button>");
+            });
+            $("#submit").on("click", function(){
+                var email = $("#email").val();
+                $.ajax({
+                    type: "POST",
+                    url: "https://api.example.com/email",
+                    data: {email: email},
+                    success: function(response){
+                        $("#emailModal .modal-body").html("<h4>Thank you for joining our waitlist!</h4>");
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Email Modal -->
+    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emailModalLabel">Join Our Waitlist</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Please enter your email address</h4>
+                    <input type='email' id='email' placeholder='Enter your email'>
+                    <button id='submit' class='btn btn-primary'>Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
