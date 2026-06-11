@@ -2,134 +2,137 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handicrafts of India</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-e6Iq-BSY2uB1fgpY3zYb3HiFi2EquTBYtmv+1guhKo/VH2gA8/wheo/+FrD48NLyDKrOl6B2y7mBEITp5Vinw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZJtcR5KHZw1JeInwf4bPHrcOaRIeYZTGgggt6gK2+LlS427q8W5r/js7KiVikO+BkB7a3F3y8xZek1Ww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Indian Home Decor Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f0f0f0;
-            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
         }
         .container {
             max-width: 1200px;
-            margin: auto;
+            margin: 40px auto;
             padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .hero {
-            background-color: #0f0f0f;
-            padding: 100px 20px;
-            color: #ffffff;
+        .header {
+            background-color: #333;
+            padding: 20px;
             text-align: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 24px;
-            margin-bottom: 40px;
-        }
-        .features {
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .features .feature {
-            padding: 20px;
-            border-bottom: 1px solid #dddddd;
-        }
-        .features .feature .icon {
-            font-size: 24px;
-            margin-right: 10px;
-        }
-        .features .feature h4 {
-            margin-top: 0;
-        }
-        .features .feature p {
-            margin-bottom: 20px;
-        }
-        .waitlist {
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .waitlist h2 {
-            margin-top: 0;
-        }
-        .waitlist form {
-            padding: 20px;
-        }
-        .waitlist form input[type="email"] {
-            padding: 10px;
-            margin-bottom: 20px;
-            width: 100%;
-        }
-        .waitlist form button[type="submit"] {
-            padding: 10px 20px;
-            background-color: #0f0f0f;
             color: #ffffff;
-            border: none;
-            cursor: pointer;
         }
-        .waitlist form button[type="submit"]:hover {
-            background-color: #333333;
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
         }
-        @media (max-width: 768px) {
-            .hero {
-                height: 50vh;
-                padding: 20px;
-            }
-            .features .feature {
-                border-bottom: none;
-            }
-            .waitlist form {
-                padding: 10px;
-            }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        .product-grid .product-card {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .product-grid .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .product-grid .product-card .price {
+            color: #0f0f0f;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .product-grid .product-card .price span {
+            font-size: 18px;
+            color: #666;
+            text-decoration: line-through;
+        }
+        .footer {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 40px;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #ccc;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="hero">
-            <h1>Welcome to Handicrafts of India</h1>
-            <p>Experience the beauty of Indian handicrafts from the comfort of your home</p>
-        </div>
-        <div class="features">
-            <div class="feature">
-                <span class="icon fa-solid fa-box"></span>
-                <h4>Handpicked Products</h4>
-                <p>Our products are carefully selected from local artisans to ensure you get the best</p>
+        <header class="header">
+            <h1>Indian Home Decor Store</h1>
+            <p>Welcome to our online store, where you'll find beautiful and unique Indian home decor products.</p>
+        </header>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="🏠" alt="Product Image">
+                <h2>Product 1</h2>
+                <p>Beautiful intricately designed wooden decorative box.</p>
+                <p class="price">₹ 2,500 <span>₹ 3,500</span></p>
+                <button class="btn btn-primary">Buy Now</button>
             </div>
-            <div class="feature">
-                <span class="icon fa-solid fa-credit-card"></span>
-                <h4>Secure Payment</h4>
-                <p>We offer secure payment options to ensure your transactions are safe and hassle-free</p>
+            <div class="product-card">
+                <img src="🕉️" alt="Product Image">
+                <h2>Product 2</h2>
+                <p>Unique and colorful embroidered decorative cushion cover.</p>
+                <p class="price">₹ 1,200 <span>₹ 1,800</span></p>
+                <button class="btn btn-primary">Buy Now</button>
             </div>
-            <div class="feature">
-                <span class="icon fa-solid fa-clock"></span>
-                <h4>Fast Shipping</h4>
-                <p>We ship our products quickly to ensure you receive them on time</p>
+            <div class="product-card">
+                <img src="🔥" alt="Product Image">
+                <h2>Product 3</h2>
+                <p>Handmade ceramic decorative vase with intricate designs.</p>
+                <p class="price">₹ 1,800 <span>₹ 2,800</span></p>
+                <button class="btn btn-primary">Buy Now</button>
             </div>
         </div>
-        <div class="waitlist">
-            <h2>Join our waitlist to get notified when we launch</h2>
-            <form>
-                <input type="email" placeholder="Enter your email address">
-                <button type="submit">Join Waitlist</button>
-            </form>
-        </div>
+        <footer class="footer">
+            <ul>
+                <li><a href="#" target="_blank">About Us</a></li>
+                <li><a href="#" target="_blank">Contact Us</a></li>
+                <li><a href="#" target="_blank">FAQs</a></li>
+                <li><a href="#" target="_blank">Return Policy</a></li>
+            </ul>
+            <p>&copy; 2023 Indian Home Decor Store. All Rights Reserved.</p>
+        </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-S+GDGF+UNJ YuF0cXh0xwEGPZcYp3UeeN3OBF9N/BfydHZHGvZ4Mstw+iqjkpy08EqLqsGOiGk2k9ZDB0I/fTg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
     <script>
-        // Add JavaScript code here
+        $(document).ready(function() {
+            // Add event listener to buy now buttons
+            $('.btn.btn-primary').on('click', function() {
+                // Simulate buy now action
+                alert('You have successfully purchased the product!');
+            });
+        });
     </script>
 </body>
 </html>
