@@ -1,166 +1,109 @@
-### Lead 1: Ramesh Godara
-* Name / Handle: @rsgodara (Instagram)
-* Platform: Instagram
-* Follower count: 230k
-* Why they are a good fit: Ramesh Godara is an Indian influencer and travel blogger who focuses on Indian handicrafts and cultural heritage.
-```email
-Subject: Partnership Opportunity for Indian Handicrafts E-commerce Store
+### Lead 1: Home Decor Influencer - Indian Vibe
 
-Hi Ramesh,
+- **Name / Handle**: The Indian Vibe
+- **Platform**: Instagram
+- **Follower count**: 230k
+- **Why they are a good fit**: Their content aligns with Indian home decor and they have a significant following.
+- **Ready-to-send Email pitch**:
+    Subject: Collaboration Opportunity with Indian Home Decor Store
+    Body: Hi The Indian Vibe team, we're a new dropshipping store selling Indian home decor products. We'd love to collaborate and promote each other's content. Would you be open to a potential partnership?
+- **Ready-to-send WhatsApp message**: "Hi, we're a new Indian home decor store and noticed you have a lovely Instagram feed. Would love to collaborate and promote each other's content?"
 
-I came across your beautiful Instagram feed and was impressed by your love for Indian handicrafts and cultural heritage. I'm reaching out to you because I'm creating a dropshipping e-commerce store that specializes in selling authentic Indian handicrafts to a global audience.
+### Lead 2: Indian Home Decor Blogger - Desi Decor
 
-I think your influence and passion for Indian culture would make you a great partner for our store. We'd love to collaborate with you and showcase our products to your followers. If you're interested, please reply to this email and let's discuss the details.
+- **Name / Handle**: Desi Decor
+- **Platform**: Pinterest
+- **Follower count**: 150k
+- **Why they are a good fit**: They specialize in Indian home decor and have a significant Pinterest following.
+- **Ready-to-send Email pitch**:
+    Subject: Partnering with Indian Home Decor Blogger
+    Body: Hi Desi Decor team, we're a new store selling Indian home decor products. We'd love to partner and share content with you. Would you be interested in a collaboration?
+- **Ready-to-send WhatsApp message**: "Hi, we're a new store selling Indian home decor and noticed your beautiful Pinterest boards. Would love to collaborate and share content with you."
 
-Best regards,
-[Your Name]
-```
-```whatsapp
-Hi Ramesh, I came across your Instagram feed and loved your content. I'm creating a dropshipping e-commerce store for Indian handicrafts and think your influence would be a great fit. Let's discuss a potential partnership? 
-```
+### Lead 3: Influencer Marketing Agency - SocialPeta
 
-### Lead 2: Poonam Dhillon
-* Name / Handle: @poonam_dhillon (Instagram)
-* Platform: Instagram
-* Follower count: 1.4M
-* Why they are a good fit: Poonam Dhillon is an Indian actress and social media influencer who often promotes Indian handicrafts and artisans.
-```email
-Subject: Partnership Opportunity for Indian Handicrafts E-commerce Store
+- **Name / Handle**: SocialPeta
+- **Platform**: LinkedIn
+- **Company size**: 100+ employees
+- **Why they are a good fit**: They specialize in influencer marketing and have a large team.
+- **Ready-to-send Email pitch**:
+    Subject: Collaboration Opportunity with Indian Home Decor Store
+    Body: Hi SocialPeta team, we're a new dropshipping store selling Indian home decor products. We'd love to collaborate with your agency and get your expert advice on influencer marketing.
+- **Ready-to-send WhatsApp message**: "Hi, we're a new Indian home decor store and noticed SocialPeta's expertise in influencer marketing. Would love to collaborate and get your advice on promoting our store."
 
-Hi Poonam,
+### Lead 4: Home Decor Influencer - Decor India
 
-I'm a huge fan of your work and appreciate the way you promote Indian artisans and handicrafts on your Instagram feed. I'm reaching out to you because I'm creating a dropshipping e-commerce store that specializes in selling authentic Indian handicrafts to a global audience.
+- **Name / Handle**: Decor India
+- **Platform**: Instagram
+- **Follower count**: 100k
+- **Why they are a good fit**: Their content focuses on Indian home decor and they have a significant following.
+- **Ready-to-send Email pitch**:
+    Subject: Collaboration Opportunity with Indian Home Decor Store
+    Body: Hi Decor India team, we're a new store selling Indian home decor products. We'd love to collaborate and promote each other's content. Would you be open to a potential partnership?
+- **Ready-to-send WhatsApp message**: "Hi, we're a new store selling Indian home decor and noticed you have a lovely Instagram feed. Would love to collaborate and promote each other's content?"
 
-I think your influence and love for Indian culture would make you a great partner for our store. We'd love to collaborate with you and showcase our products to your followers. If you're interested, please reply to this email and let's discuss the details.
+### Lead 5: Indian Home Decor Store - Art Of Living
 
-Best regards,
-[Your Name]
-```
-```whatsapp
-Hi Poonam, I've been a fan of your work and love the way you promote Indian artisans on Instagram. I'm creating a dropshipping e-commerce store for Indian handicrafts and think your influence would be a great fit. Let's discuss a potential partnership? 
-```
+- **Name / Handle**: The Art of Living
+- **Platform**: Email
+- **Company size**: 1000+ employees
+- **Why they are a good fit**: They specialize in Indian home decor and have a large customer base.
+- **Ready-to-send Email pitch**:
+    Subject: Potential Partnership with Indian Home Decor Store
+    Body: Hi Art Of Living team, we're a new dropshipping store selling Indian home decor products. We'd love to collaborate and share content with you. Would you be interested in a partnership?
+- **Ready-to-send WhatsApp message**: "Hi, we're a new store selling Indian home decor and noticed The Art of Living's expertise in the field. Would love to collaborate and share content with you."
 
-### Lead 3: Priya Dutt
-* Name / Handle: @priyadutt (Twitter)
-* Platform: Twitter
-* Follower count: 30k
-* Why they are a good fit: Priya Dutt is an Indian social worker and activist who often promotes Indian handicrafts and artisans.
-```email
-Subject: Partnership Opportunity for Indian Handicrafts E-commerce Store
+### Lead 6: Influencer - Indian Hues
 
-Hi Priya,
+- **Name / Handle**: Indian Hues
+- **Platform**: Instagram
+- **Follower count**: 50k
+- **Why they are a good fit**: Their content focuses on Indian home decor and they have a significant following.
+- **Ready-to-send Email pitch**:
+    Subject: Collaboration Opportunity with Indian Home Decor Store
+    Body: Hi Indian Hues team, we're a new store selling Indian home decor products. We'd love to collaborate and promote each other's content. Would you be open to a potential partnership?
+- **Ready-to-send WhatsApp message**: "Hi, we're a new store selling Indian home decor and noticed you have a lovely Instagram feed. Would love to collaborate and promote each other's content?"
 
-I'm creating a dropshipping e-commerce store that specializes in selling authentic Indian handicrafts to a global audience. I came across your work and was impressed by your commitment to promoting Indian artisans and handicrafts.
+### Lead 7: Home Decor Influencer - Disha's Decor
 
-I think your influence and passion for Indian culture would make you a great partner for our store. We'd love to collaborate with you and showcase our products to your followers. If you're interested, please reply to this email and let's discuss the details.
+- **Name / Handle**: Disha's Decor
+- **Platform**: Instagram
+- **Follower count**: 200k
+- **Why they are a good fit**: Their content focuses on Indian home decor and they have a significant following.
+- **Ready-to-send Email pitch**:
+    Subject: Collaboration Opportunity with Indian Home Decor Store
+    Body: Hi Disha's Decor team, we're a new store selling Indian home decor products. We'd love to collaborate and promote each other's content. Would you be open to a potential partnership?
+- **Ready-to-send WhatsApp message**: "Hi, we're a new store selling Indian home decor and noticed you have a lovely Instagram feed. Would love to collaborate and promote each other's content?"
 
-Best regards,
-[Your Name]
-```
-```whatsapp
-Hi Priya, I've been inspired by your work and love the way you promote Indian artisans. I'm creating a dropshipping e-commerce store for Indian handicrafts and think your influence would be a great fit. Let's discuss a potential partnership? 
-```
+### Lead 8: Influencer Marketing Agency - Influencer Marketing Hub
 
-### Lead 4: Dolly Thakore
-* Name / Handle: @dollythakore (Instagram)
-* Platform: Instagram
-* Follower count: 100k
-* Why they are a good fit: Dolly Thakore is an Indian social worker and activist who often promotes Indian handicrafts and artisans.
-```email
-Subject: Partnership Opportunity for Indian Handicrafts E-commerce Store
+- **Name / Handle**: Influencer Marketing Hub
+- **Platform**: LinkedIn
+- **Company size**: 50+ employees
+- **Why they are a good fit**: They specialize in influencer marketing and have a large team.
+- **Ready-to-send Email pitch**:
+    Subject: Collaboration Opportunity with Indian Home Decor Store
+    Body: Hi Influencer Marketing Hub team, we're a new dropshipping store selling Indian home decor products. We'd love to collaborate with your agency and get your expert advice on influencer marketing.
+- **Ready-to-send WhatsApp message**: "Hi, we're a new Indian home decor store and noticed Influencer Marketing Hub's expertise in influencer marketing. Would love to collaborate and get your advice on promoting our store."
 
-Hi Dolly,
+### Lead 9: Home Decor Influencer - The Indian Abode
 
-I'm creating a dropshipping e-commerce store that specializes in selling authentic Indian handicrafts to a global audience. I came across your Instagram feed and was impressed by your love for Indian culture and artisans.
+- **Name / Handle**: The Indian Abode
+- **Platform**: Instagram
+- **Follower count**: 150k
+- **Why they are a good fit**: Their content focuses on Indian home decor and they have a significant following.
+- **Ready-to-send Email pitch**:
+    Subject: Collaboration Opportunity with Indian Home Decor Store
+    Body: Hi The Indian Abode team, we're a new store selling Indian home decor products. We'd love to collaborate and promote each other's content. Would you be open to a potential partnership?
+- **Ready-to-send WhatsApp message**: "Hi, we're a new store selling Indian home decor and noticed you have a lovely Instagram feed. Would love to collaborate and promote each other's content?"
 
-I think your influence and passion for Indian culture would make you a great partner for our store. We'd love to collaborate with you and showcase our products to your followers. If you're interested, please reply to this email and let's discuss the details.
+### Lead 10: Indian Home Decor Store - HomeLane
 
-Best regards,
-[Your Name]
-```
-```whatsapp
-Hi Dolly, I've been inspired by your Instagram feed and love the way you promote Indian artisans. I'm creating a dropshipping e-commerce store for Indian handicrafts and think your influence would be a great fit. Let's discuss a potential partnership? 
-```
-
-### Lead 5: Manu Bhaker
-* Name / Handle: @manubhaker (Instagram)
-* Platform: Instagram
-* Follower count: 50k
-* Why they are a good fit: Manu Bhaker is an Indian shooter and social media influencer who often promotes Indian handicrafts and artisans.
-```email
-Subject: Partnership Opportunity for Indian Handicrafts E-commerce Store
-
-Hi Manu,
-
-I'm a huge fan of your work and appreciate the way you promote Indian artisans and handicrafts on your Instagram feed. I'm reaching out to you because I'm creating a dropshipping e-commerce store that specializes in selling authentic Indian handicrafts to a global audience.
-
-I think your influence and love for Indian culture would make you a great partner for our store. We'd love to collaborate with you and showcase our products to your followers. If you're interested, please reply to this email and let's discuss the details.
-
-Best regards,
-[Your Name]
-```
-```whatsapp
-Hi Manu, I've been a fan of your work and love the way you promote Indian artisans on Instagram. I'm creating a dropshipping e-commerce store for Indian handicrafts and think your influence would be a great fit. Let's discuss a potential partnership? 
-```
-
-### Lead 6: Kishwar Desai
-* Name / Handle: @kishwarsedai (Twitter)
-* Platform: Twitter
-* Follower count: 10k
-* Why they are a good fit: Kishwar Desai is an Indian author and social worker who often promotes Indian handicrafts and artisans.
-```email
-Subject: Partnership Opportunity for Indian Handicrafts E-commerce Store
-
-Hi Kishwar,
-
-I'm creating a dropshipping e-commerce store that specializes in selling authentic Indian handicrafts to a global audience. I came across your work and was impressed by your commitment to promoting Indian artisans and handicrafts.
-
-I think your influence and passion for Indian culture would make you a great partner for our store. We'd love to collaborate with you and showcase our products to your followers. If you're interested, please reply to this email and let's discuss the details.
-
-Best regards,
-[Your Name]
-```
-```whatsapp
-Hi Kishwar, I've been inspired by your work and love the way you promote Indian artisans. I'm creating a dropshipping e-commerce store for Indian handicrafts and think your influence would be a great fit. Let's discuss a potential partnership? 
-```
-
-### Lead 7: Shriya Pilgaonkar
-* Name / Handle: @shriyapilgaonkar (Instagram)
-* Platform: Instagram
-* Follower count: 50k
-* Why they are a good fit: Shriya Pilgaonkar is an Indian actress and social media influencer who often promotes Indian handicrafts and artisans.
-```email
-Subject: Partnership Opportunity for Indian Handicrafts E-commerce Store
-
-Hi Shriya,
-
-I'm a huge fan of your work and appreciate the way you promote Indian artisans and handicrafts on your Instagram feed. I'm reaching out to you because I'm creating a dropshipping e-commerce store that specializes in selling authentic Indian handicrafts to a global audience.
-
-I think your influence and love for Indian culture would make you a great partner for our store. We'd love to collaborate with you and showcase our products to your followers. If you're interested, please reply to this email and let's discuss the details.
-
-Best regards,
-[Your Name]
-```
-```whatsapp
-Hi Shriya, I've been a fan of your work and love the way you promote Indian artisans on Instagram. I'm creating a dropshipping e-commerce store for Indian handicrafts and think your influence would be a great fit. Let's discuss a potential partnership? 
-```
-
-### Lead 8: Mallika Dua
-* Name / Handle: @mallikadua (Instagram)
-* Platform: Instagram
-* Follower count: 50k
-* Why they are a good fit: Mallika Dua is an Indian comedian and social media influencer who often promotes Indian handicrafts and artisans.
-```email
-Subject: Partnership Opportunity for Indian Handicrafts E-commerce Store
-
-Hi Mallika,
-
-I'm a huge fan of your work and appreciate the way you promote Indian artisans and handicrafts on your Instagram feed. I'm reaching out to you because I'm creating a dropshipping e-commerce store that specializes in selling authentic Indian handicrafts to a global audience.
-
-I think your influence and love for Indian culture would make you a great partner for our store. We'd love to collaborate with you and showcase our products to your followers. If you're interested, please reply to this email and let's discuss the details.
-
-Best regards,
-[Your Name]
-```
-```whatsapp
-Hi Mallika,
+- **Name / Handle**: HomeLane
+- **Platform**: Email
+- **Company size**: 500+ employees
+- **Why they are a good fit**: They specialize in Indian home decor and have a large customer base.
+- **Ready-to-send Email pitch**:
+    Subject: Potential Partnership with Indian Home Decor Store
+    Body: Hi HomeLane team, we're a new dropshipping store selling Indian home decor products. We'd love to collaborate and share content with you. Would you be interested in a partnership?
+- **Ready-to-send WhatsApp message**: "Hi, we're a new store selling Indian home decor and noticed HomeLane's expertise in the field. Would love to collaborate and share content with you."
