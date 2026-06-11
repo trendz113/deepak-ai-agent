@@ -1,32 +1,55 @@
 ## Brand Headline and Tagline
-**Headline:** Rangoli Handicrafts
-**Tagline:** "Weaving India's heritage into your home"
+### Brand Headline: 
+Mumbai Magic, Delivered
+
+### Tagline: 
+Experience the essence of India in the comfort of your home
 
 ## Instagram Post
-**Post:** Introducing Rangoli Handicrafts, your one-stop shop for exquisite Indian handicrafts!
-Explore our collection of handwoven textiles, intricately crafted wooden decor, and beautiful ceramics from across India. From the comfort of your own home, take a piece of India's rich culture with you.
-**Hashtags:** #IndianHandicrafts #Handicrafts #InspirationalHomeDecor #RangoliHandicrafts #Ecommerce #Dropshipping #ShopNow
-**Image:** A beautifully styled flat lay of Indian handicrafts on a wooden table, with a hint of Indian architecture in the background.
+### Post:
+Add a touch of India to your space with our exquisite handcrafted decor pieces! From elegant wooden carvings to vibrant hand-painted wall art, our collection has something for every style and budget.
+
+### Post Image: 
+[Image of a beautifully decorated room with Indian home decor pieces]
+
+### Hashtags: 
+#IndianHomeDecor #HomeDecorInspo #HandcraftedWithLove #MumbaiMagic #GlobalDecor
 
 ## Twitter/X Post
-Launch alert! Discover the authentic beauty of Indian handicrafts at Rangoli Handicrafts. Shop from the comfort of your home and take a piece of India's rich heritage with you!
+### Post:
+Elevate your space with Indian charm! Explore our curated collection of handcrafted decor pieces & get ready to experience the magic of India in your home  #IndianHomeDecor #HomeDecorInspo
 
 ## LinkedIn Post
-**Post:** As a business owner, have you ever wanted to bring a touch of cultural authenticity to your home decor? Look no further than Rangoli Handicrafts, your one-stop shop for exquisite Indian handicrafts. From handwoven textiles to intricately crafted wooden decor, our collection showcases the best of Indian craftsmanship.
-At Rangoli Handicrafts, we're passionate about preserving India's rich cultural heritage and bringing it to your doorstep. Explore our collection today and discover the beauty of India's handicrafts!
+### Post:
+As we continue to navigate the world of global connectivity, it's more important than ever to infuse our living and working spaces with the essence of our cultural heritage. At [Store Name], we're passionate about bringing you the finest Indian home decor pieces, handcrafted with love and care. Explore our collection today and experience the magic of India in the comfort of your home.
+
+### Post Image: 
+[Image of a beautifully decorated room with Indian home decor pieces]
 
 ## WhatsApp Message
-Hey! Check out Rangoli Handicrafts - your new go-to for authentic Indian handicrafts! Handwoven textiles, wooden decor, and more, all delivered to your doorstep. What are you waiting for?
+### Message:
+Hey! Want to add a touch of India to your space? We've got you covered! Explore our curated collection of handcrafted decor pieces, starting from ₹999 only! 
 
 ## Facebook Post
-**Post:** We're thrilled to announce the launch of Rangoli Handicrafts, your ultimate destination for Indian handicrafts! Our collection is a reflection of India's rich cultural heritage, with a focus on handwoven textiles, intricate wooden decor, and beautiful ceramics.
-At Rangoli Handicrafts, we're committed to preserving India's traditional craftsmanship and bringing it to your home. Explore our collection today and take a piece of India's heritage with you!
+### Post:
+Introducing [Store Name], your one-stop destination for all things Indian home decor! From elegant wooden carvings to vibrant hand-painted wall art, our collection has something for every style and budget. Explore our curated collection today and experience the magic of India in the comfort of your home.
+
+### Post Image: 
+[Image of a beautifully decorated room with Indian home decor pieces]
 
 ## Email Subject Lines
-1. Introducing Rangoli Handicrafts: Your Home for Indian Handicrafts
-2. Discover India's Rich Cultural Heritage with Rangoli Handicrafts
-3. Exclusive Launch Offer: Get 15% Off Your First Purchase at Rangoli Handicrafts
+### Subject Line 1:
+Experience the Magic of India in Your Home
 
-## Google Ad Headline + Description
-**Headline:** Authentic Indian Handicrafts
-**Description:** Explore Rangoli Handicrafts' collection of handwoven textiles, intricately crafted wooden decor, and beautiful ceramics from across India. Shop now and take a piece of India's rich cultural heritage home!
+### Subject Line 2:
+Discover Exquisite Handcrafted Indian Home Decor
+
+### Subject Line 3:
+Get Ready to Elevate Your Space with Indian Charm!
+
+## Google Ad Headline and Description
+### Headline:
+Add a Touch of India to Your Space
+
+### Description:
+Explore our curated collection of handcrafted Indian home decor pieces, starting from ₹999 only! From elegant wooden carvings to vibrant hand-painted wall art, find the perfect piece to elevate your space with Indian charm.
